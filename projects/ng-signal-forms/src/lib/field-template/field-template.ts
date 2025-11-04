@@ -20,10 +20,4 @@ export class FieldTemplate {
   params = input<FieldParams>({});
 
   contentTemplate = contentChild(TemplateRef);
-
-  constructor() {
-    effect(() => {
-      console.log('FieldTemplate params changed:', this.field()());
-    });
-  }
 }
