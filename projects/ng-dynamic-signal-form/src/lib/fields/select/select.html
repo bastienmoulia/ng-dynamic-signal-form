@@ -7,7 +7,9 @@
       [attr.autocomplete]="'noop'"
     >
       @if (params().options) { @for (option of params().options; track option.value) {
-      <option [value]="option.value">{{ option.label }}</option>
+      <option [value]="option.value" [attr.disabled]="option.disabled ? true : null">
+        {{ option.label }}
+      </option>
       } }
     </select>
   </ng-template>

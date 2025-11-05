@@ -5,6 +5,7 @@ import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../field-template/field
 export interface NgdsfSelectOption {
   value: string | number;
   label: string;
+  disabled?: boolean;
 }
 
 export interface NgdsfSelectParams extends NgdsfFieldParams {

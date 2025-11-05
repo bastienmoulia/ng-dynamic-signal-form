@@ -53,7 +53,7 @@ export class Home {
         { value: 'uk', label: 'United Kingdom' },
         { value: 'fr', label: 'France' },
         { value: 'de', label: 'Germany' },
-        { value: 'es', label: 'Spain' },
+        { value: 'es', label: 'Spain', disabled: true },
       ],
     },
     message: {
