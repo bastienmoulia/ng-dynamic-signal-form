@@ -1,4 +1,4 @@
-import { Component, computed, effect, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { NgdsfFieldParams } from '../field-template/field-template';
 import { NgdsfInputText } from './input-text/input-text';
 import { NgdsfInputEmail } from './input-email/input-email';
