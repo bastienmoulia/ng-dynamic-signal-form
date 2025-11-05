@@ -6,9 +6,9 @@
       [attr.disabled]="params().disabled"
       [attr.autocomplete]="'noop'"
     >
-      @for (option of params().options; track option.value) {
+      @if (params().options) { @for (option of params().options; track option.value) {
       <option [value]="option.value">{{ option.label }}</option>
-      }
+      } }
     </select>
   </ng-template>
 </ngdsf-field-template>
