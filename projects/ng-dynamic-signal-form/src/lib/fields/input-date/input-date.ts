@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Field } from '@angular/forms/signals';
+import { Field, FieldState } from '@angular/forms/signals';
 import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../field-template/field-template';
 
 interface NgdsfInputDateParams extends NgdsfFieldParams {
@@ -12,6 +12,6 @@ interface NgdsfInputDateParams extends NgdsfFieldParams {
   templateUrl: './input-date.html',
 })
 export class NgdsfInputDate {
-  field = input.required<any>();
+  field = input.required<() => FieldState<any, string | number>>();
   params = input<NgdsfInputDateParams>({});
 }

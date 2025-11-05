@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Field } from '@angular/forms/signals';
+import { Field, FieldState } from '@angular/forms/signals';
 import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../field-template/field-template';
 
 interface NgdsfInputEmailParams extends NgdsfFieldParams {
@@ -12,6 +12,6 @@ interface NgdsfInputEmailParams extends NgdsfFieldParams {
   templateUrl: './input-email.html',
 })
 export class NgdsfInputEmail {
-  field = input.required<any>();
+  field = input.required<() => FieldState<any, string | number>>();
   params = input<NgdsfInputEmailParams>({});
 }

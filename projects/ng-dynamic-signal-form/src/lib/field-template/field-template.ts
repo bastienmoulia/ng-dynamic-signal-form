@@ -1,5 +1,6 @@
 import { NgTemplateOutlet } from '@angular/common';
 import { Component, contentChild, input, TemplateRef } from '@angular/core';
+import { FieldState } from '@angular/forms/signals';
 
 export interface NgdsfFieldParams {
   id?: string;
@@ -16,7 +17,7 @@ export interface NgdsfFieldParams {
   templateUrl: './field-template.html',
 })
 export class NgdsfFieldTemplate {
-  field = input.required<any>();
+  field = input.required<() => FieldState<any, string | number>>();
   params = input.required<NgdsfFieldParams>({});
 
   contentTemplate = contentChild(TemplateRef);

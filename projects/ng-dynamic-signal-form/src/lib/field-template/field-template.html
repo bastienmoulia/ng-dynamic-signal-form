@@ -1,4 +1,4 @@
-@if(field() !== undefined ) {
+@if(field() !== undefined && field()() !== undefined) {
 <label>
   @if (params().label) {
   {{ params().label }}
