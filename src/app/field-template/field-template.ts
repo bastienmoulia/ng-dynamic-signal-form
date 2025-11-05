@@ -1,5 +1,5 @@
-import { JsonPipe, NgTemplateOutlet } from '@angular/common';
-import { Component, contentChild, effect, input, TemplateRef } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
+import { Component, contentChild, input, TemplateRef } from '@angular/core';
 
 export interface FieldParams {
   id?: string;
@@ -17,7 +17,7 @@ export interface FieldParams {
 })
 export class FieldTemplate {
   field = input.required<any>();
-  params = input<FieldParams>({});
+  params = input.required<FieldParams>({});
 
   contentTemplate = contentChild(TemplateRef);
 }

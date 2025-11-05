@@ -1,24 +1,18 @@
-import { Component, inject, Injector, Input, runInInjectionContext, signal } from '@angular/core';
-import { email, Field, form, maxLength, pattern, required, submit } from '@angular/forms/signals';
-import { InputEmail } from '../fields/input-email/input-email';
-import { InputPassword } from '../fields/input-password/input-password';
+import { Component, inject, Injector, runInInjectionContext, signal } from '@angular/core';
+import { email, form, maxLength, pattern, required, submit } from '@angular/forms/signals';
 import { JsonPipe } from '@angular/common';
-import { InputTime } from '../fields/input-time/input-time';
-import { InputDate } from '../fields/input-date/input-date';
-import { Textarea } from '../fields/textarea/textarea';
-import { InputText } from '../fields/input-text/input-text';
-import { FieldParams } from '../field-template/field-template';
+import { Fields, FieldType, FormParams } from '../fields/fields';
 
 @Component({
   selector: 'app-home',
-  imports: [Field, InputText, InputEmail, InputPassword, InputDate, InputTime, Textarea, JsonPipe],
+  imports: [JsonPipe, Fields],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home {
   #injector = inject(Injector);
 
-  loginModel = signal({
+  model = signal({
     name: '',
     email: '',
     password: '',
@@ -27,16 +21,29 @@ export class Home {
     message: '',
   });
 
-  loginParams = signal<{ [key: string]: FieldParams }>({
-    name: { label: 'Name', placeholder: 'Enter your name' },
-    email: { label: 'Custom Email Label', placeholder: 'Enter your email' },
-    password: { label: 'Password', placeholder: 'Enter your password' },
-    eventDate: { label: 'Event Date', placeholder: 'Select a date' },
-    eventTime: { label: 'Event Time', placeholder: 'Select a time' },
-    message: { label: 'Message', placeholder: 'Enter your message', rows: 5 },
+  formParams = signal<FormParams>({
+    name: { type: FieldType.InputText, label: 'Name', placeholder: 'Enter your name' },
+    email: {
+      type: FieldType.InputEmail,
+      label: 'Custom Email Label',
+      placeholder: 'Enter your email',
+    },
+    password: {
+      type: FieldType.InputPassword,
+      label: 'Password',
+      placeholder: 'Enter your password',
+    },
+    eventDate: { type: FieldType.InputDate, label: 'Event Date', placeholder: 'Select a date' },
+    eventTime: { type: FieldType.InputTime, label: 'Event Time', placeholder: 'Select a time' },
+    message: {
+      type: FieldType.Textarea,
+      label: 'Message',
+      placeholder: 'Enter your message',
+      rows: 5,
+    },
   });
 
-  loginForm = form(this.loginModel, (p) => {
+  form = form(this.model, (p) => {
     required(p.email, {
       message: 'Email is required',
     });
@@ -53,24 +60,24 @@ export class Home {
 
   onSubmit(event: Event) {
     event.preventDefault();
-    submit(this.loginForm, async () => {
+    submit(this.form, async () => {
       // Perform login logic here
-      const credentials = this.loginModel();
+      const credentials = this.model();
       console.log('Logging in with:', credentials);
       // e.g., await this.authService.login(credentials);
     });
   }
 
   changeForm() {
-    if (this.loginModel().email) {
-      this.loginModel.set({
+    if (this.model().email) {
+      this.model.set({
         password: 'newpassword',
         eventDate: '2023-01-01',
         eventTime: '12:00',
         message: 'New message',
       } as any);
     } else {
-      this.loginModel.set({
+      this.model.set({
         email: 'newemail@example.com',
         password: 'newpassword',
         eventDate: '2023-01-01',
@@ -78,8 +85,8 @@ export class Home {
         message: 'New message',
       } as any);
     }
-    if (this.loginParams()['message'].label === 'Message') {
-      this.loginParams.update((params) => ({
+    if (this.formParams()['message'].label === 'Message') {
+      this.formParams.update((params) => ({
         ...params,
         message: {
           ...params['message'],
@@ -87,7 +94,7 @@ export class Home {
         },
       }));
     } else {
-      this.loginParams.update((params) => ({
+      this.formParams.update((params) => ({
         ...params,
         message: {
           ...params['message'],
@@ -99,11 +106,11 @@ export class Home {
 
   requiredForm() {
     runInInjectionContext(this.#injector, () => {
-      this.loginForm = form(this.loginModel, (p) => {
+      this.form = form(this.model, (p) => {
         required(p.email, { message: 'Email is required' });
         // ... other validators
       });
     });
-    console.log('Updated form with required email:', this.loginForm);
+    console.log('Updated form with required email:', this.form);
   }
 }
