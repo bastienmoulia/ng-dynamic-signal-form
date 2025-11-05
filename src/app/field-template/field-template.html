@@ -1,7 +1,5 @@
 @if(field() !== undefined ) {
 <label>
-  {{ field()().metadataState.metadata['label'] }}
-  {{ field()().required ? '*' : '' }}
   @if (params().label) {
   {{ params().label }}
   {{ field()().required ? '*' : '' }}

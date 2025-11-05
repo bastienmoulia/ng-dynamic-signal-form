@@ -1,14 +1,5 @@
 import { Component, inject, Injector, Input, runInInjectionContext, signal } from '@angular/core';
-import {
-  email,
-  Field,
-  form,
-  maxLength,
-  metadata,
-  pattern,
-  required,
-  submit,
-} from '@angular/forms/signals';
+import { email, Field, form, maxLength, pattern, required, submit } from '@angular/forms/signals';
 import { InputEmail } from '../fields/input-email/input-email';
 import { InputPassword } from '../fields/input-password/input-password';
 import { JsonPipe } from '@angular/common';
@@ -58,7 +49,6 @@ export class Home {
     required(p.eventTime, { message: 'Event time is required' });
     required(p.message, { message: 'Message is required' });
     maxLength(p.message, 50, { message: 'Message cannot exceed 50 characters' });
-    metadata(p.message, () => ({ label: 'Message2', placeholder: 'Enter your message', rows: 5 }));
   });
 
   onSubmit(event: Event) {
@@ -87,6 +77,23 @@ export class Home {
         eventTime: '12:00',
         message: 'New message',
       } as any);
+    }
+    if (this.loginParams()['message'].label === 'Message') {
+      this.loginParams.update((params) => ({
+        ...params,
+        message: {
+          ...params['message'],
+          label: 'Updated Message Label',
+        },
+      }));
+    } else {
+      this.loginParams.update((params) => ({
+        ...params,
+        message: {
+          ...params['message'],
+          label: 'Message',
+        },
+      }));
     }
   }
 
