@@ -2,8 +2,12 @@ import { Component, input } from '@angular/core';
 import { Field, FieldState } from '@angular/forms/signals';
 import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../field-template/field-template';
 
-interface NgdsfInputTextParams extends NgdsfFieldParams {
-  // Additional properties specific to the text input can be added here
+export interface NgdsfInputTextParams extends NgdsfFieldParams {
+  minlength?: number;
+  maxlength?: number;
+  pattern?: string;
+  autocomplete?: string;
+  size?: number;
 }
 
 @Component({

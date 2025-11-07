@@ -2,8 +2,10 @@ import { Component, input } from '@angular/core';
 import { Field, FieldState } from '@angular/forms/signals';
 import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../field-template/field-template';
 
-interface NgdsfInputTimeParams extends NgdsfFieldParams {
-  // Additional properties specific to the time input can be added here
+export interface NgdsfInputTimeParams extends NgdsfFieldParams {
+  min?: string;
+  max?: string;
+  step?: number;
 }
 
 @Component({

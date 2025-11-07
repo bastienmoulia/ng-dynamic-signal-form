@@ -2,8 +2,13 @@ import { Component, input } from '@angular/core';
 import { Field, FieldState } from '@angular/forms/signals';
 import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../field-template/field-template';
 
-interface NgdsfInputEmailParams extends NgdsfFieldParams {
-  // Additional properties specific to the email input can be added here
+export interface NgdsfInputEmailParams extends NgdsfFieldParams {
+  minlength?: number;
+  maxlength?: number;
+  pattern?: string;
+  autocomplete?: string;
+  size?: number;
+  multiple?: boolean;
 }
 
 @Component({
