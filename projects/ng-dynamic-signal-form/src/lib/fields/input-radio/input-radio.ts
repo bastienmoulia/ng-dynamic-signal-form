@@ -2,7 +2,10 @@ import { Component, input } from '@angular/core';
 import { Field, FieldState } from '@angular/forms/signals';
 import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../field-template/field-template';
 
-export interface NgdsfInputRadioParams extends NgdsfFieldParams {}
+export interface NgdsfInputRadioParams extends NgdsfFieldParams {
+  name?: string;
+  value?: string;
+}
 
 @Component({
   selector: 'ngdsf-input-radio',
