@@ -10,6 +10,8 @@ export interface NgdsfSelectOption {
 
 export interface NgdsfSelectParams extends NgdsfFieldParams {
   options?: NgdsfSelectOption[];
+  multiple?: boolean;
+  size?: number;
 }
 
 @Component({

@@ -2,8 +2,12 @@ import { Component, input } from '@angular/core';
 import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../field-template/field-template';
 import { Field, FieldState } from '@angular/forms/signals';
 
-interface NgdsfInputPasswordParams extends NgdsfFieldParams {
-  // Additional properties specific to the password input can be added here
+export interface NgdsfInputPasswordParams extends NgdsfFieldParams {
+  minlength?: number;
+  maxlength?: number;
+  pattern?: string;
+  autocomplete?: string;
+  size?: number;
 }
 
 @Component({

@@ -7,7 +7,12 @@
       [attr.placeholder]="params().placeholder"
       [attr.disabled]="params().disabled"
       [attr.readonly]="params().readonly"
-      [attr.autocomplete]="'noop'"
+      [attr.minlength]="params().minlength"
+      [attr.maxlength]="params().maxlength"
+      [attr.pattern]="params().pattern"
+      [attr.autocomplete]="params().autocomplete ?? 'noop'"
+      [attr.size]="params().size"
+      [attr.multiple]="params().multiple"
     />
   </ng-template>
 </ngdsf-field-template>
