@@ -3,7 +3,7 @@ import { Field, FieldState } from '@angular/forms/signals';
 import { NgdsfFieldParams, NgdsfFieldTemplate } from '../../field-template/field-template';
 
 export interface NgdsfSelectOption {
-  type: 'option';
+  type?: 'option';
   value: string | number;
   label: string;
   disabled?: boolean;

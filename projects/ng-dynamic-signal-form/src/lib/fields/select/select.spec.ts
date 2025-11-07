@@ -95,4 +95,17 @@ describe('NgdsfSelect', () => {
     expect(component.params().options).toBeTruthy();
     expect(component.params().options?.length).toBe(5);
   });
+
+  it('should support backward compatibility with options without type property', () => {
+    fixture.componentRef.setInput('params', {
+      options: [
+        { value: '1', label: 'Option 1' },
+        { value: '2', label: 'Option 2', disabled: true },
+        { value: '3', label: 'Option 3' },
+      ],
+    });
+    fixture.detectChanges();
+    expect(component.params().options).toBeTruthy();
+    expect(component.params().options?.length).toBe(3);
+  });
 });

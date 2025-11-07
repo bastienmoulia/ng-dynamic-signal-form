@@ -9,11 +9,7 @@
       [class]="params().className"
     >
       @if (params().options) { @for (item of params().options; track $index) { @if (item.type
-      === 'option') {
-      <option [value]="item.value" [attr.disabled]="item.disabled ? true : null">
-        {{ item.label }}
-      </option>
-      } @else if (item.type === 'optgroup') {
+      === 'optgroup') {
       <optgroup [label]="item.label" [attr.disabled]="item.disabled ? true : null">
         @for (option of item.options; track option.value) {
         <option [value]="option.value" [attr.disabled]="option.disabled ? true : null">
@@ -23,6 +19,10 @@
       </optgroup>
       } @else if (item.type === 'hr') {
       <hr />
+      } @else {
+      <option [value]="item.value" [attr.disabled]="item.disabled ? true : null">
+        {{ item.label }}
+      </option>
       } } }
     </select>
   </ng-template>
