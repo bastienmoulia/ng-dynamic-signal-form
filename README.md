@@ -107,11 +107,26 @@ npm run build
 
 ### Testing
 
+#### Unit Tests
+
 ```bash
 npm test
 ```
 
-The setup uses Angular CLI & Karma for unit tests. (No e2e configured.)
+The setup uses Angular CLI & Vitest for unit tests.
+
+#### End-to-End Tests
+
+```bash
+npm run e2e
+```
+
+E2E tests use Playwright. For more information, see the [e2e/README.md](./e2e/README.md).
+
+Additional E2E commands:
+- `npm run e2e:ui` - Run tests in interactive UI mode
+- `npm run e2e:headed` - Run tests in headed mode (see browser)
+- `npm run e2e:report` - View test report
 
 ## Publishing (manual)
 
