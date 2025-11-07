@@ -123,6 +123,10 @@ npm publish --access public
 
 Ensure peer dependencies match your target Angular version.
 
+## Accessibility
+
+This library is built with accessibility in mind, following WCAG 2.1 guidelines and implementing appropriate ARIA patterns. For detailed accessibility information, best practices, and testing guidelines, see [ACCESSIBILITY.md](./ACCESSIBILITY.md).
+
 ## Deployment
 
 See `DEPLOYMENT.md` for GitHub Pages workflow details. The demo app is built with a base href of `/ng-signal-forms-components/`.
