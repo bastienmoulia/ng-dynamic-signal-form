@@ -14,6 +14,7 @@ The deployment workflow (`.github/workflows/deploy-demo.yml`) consists of four j
 ## Triggering the Workflow
 
 The workflow is triggered by:
+
 - Push events to the `main` branch
 - Manual workflow dispatch from the Actions tab
 
@@ -54,22 +55,26 @@ https://bastienmoulia.github.io/ng-dynamic-signal-form/
 ## Troubleshooting
 
 ### Workflow Fails on Test Job
+
 - Check the test logs in the Actions tab
 - Run tests locally with `npm test`
 - Fix any failing tests before pushing
 
 ### Workflow Fails on E2E Job
+
 - Check the E2E test logs in the Actions tab
 - Run E2E tests locally with `npm run e2e`
 - Review the Playwright report artifact in the Actions tab for detailed test results
 - Fix any failing E2E tests before pushing
 
 ### Workflow Fails on Build Job
+
 - Ensure both the library and demo app build successfully locally
 - Run `npm run build -- ng-dynamic-signal-form` followed by `npm run build -- demo --base-href /ng-dynamic-signal-form/`
 - Check for any build errors in the Actions logs
 
 ### Deployment Succeeds but Site Shows 404
+
 - Verify GitHub Pages is enabled in repository settings
 - Ensure the source is set to "GitHub Actions"
 - Check that the workflow completed successfully
