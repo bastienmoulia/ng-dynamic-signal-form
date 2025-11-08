@@ -1,4 +1,4 @@
-# Accessibility Guide for ng-signal-forms-components
+# Accessibility Guide for ng-dynamic-signal-form
 
 This guide outlines accessibility best practices and ARIA patterns implemented in the `ng-dynamic-signal-form` library.
 

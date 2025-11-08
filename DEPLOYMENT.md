@@ -32,7 +32,7 @@ This allows the workflow to deploy to GitHub Pages using the `deploy-pages` acti
 
 ## Base URL Configuration
 
-The demo application is configured to use the base URL `/ng-signal-forms-components/` to match the GitHub Pages URL structure. This is set in the workflow using an environment variable `BASE_HREF` and applied during the build with the `--base-href` flag.
+The demo application is configured to use the base URL `/ng-dynamic-signal-form/` to match the GitHub Pages URL structure. This is set in the workflow using an environment variable `BASE_HREF` and applied during the build with the `--base-href` flag.
 
 If you fork this repository, you'll need to update the `BASE_HREF` environment variable in the workflow file to match your repository name.
 
@@ -49,7 +49,7 @@ You can manually trigger a deployment:
 ## Viewing the Deployed Demo
 
 Once deployed, the demo will be available at:
-https://bastienmoulia.github.io/ng-signal-forms-components/
+https://bastienmoulia.github.io/ng-dynamic-signal-form/
 
 ## Troubleshooting
 
@@ -66,7 +66,7 @@ https://bastienmoulia.github.io/ng-signal-forms-components/
 
 ### Workflow Fails on Build Job
 - Ensure both the library and demo app build successfully locally
-- Run `npm run build -- ng-dynamic-signal-form` followed by `npm run build -- demo --base-href /ng-signal-forms-components/`
+- Run `npm run build -- ng-dynamic-signal-form` followed by `npm run build -- demo --base-href /ng-dynamic-signal-form/`
 - Check for any build errors in the Actions logs
 
 ### Deployment Succeeds but Site Shows 404
