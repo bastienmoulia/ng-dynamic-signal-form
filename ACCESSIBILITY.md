@@ -1,6 +1,6 @@
-# Accessibility Guide for ng-dynamic-signal-form
+# Accessibility Guide for ng-flex-form
 
-This guide outlines accessibility best practices and ARIA patterns implemented in the `ng-dynamic-signal-form` library.
+This guide outlines accessibility best practices and ARIA patterns implemented in the `ng-flex-form` library.
 
 ## Overview
 
