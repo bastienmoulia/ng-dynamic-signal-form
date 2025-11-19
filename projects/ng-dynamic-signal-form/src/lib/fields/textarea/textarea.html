@@ -1,7 +1,7 @@
-<ngdsf-field-template [field]="field()" [params]="params()">
+<ngdsf-field-template [field]="$any(field())" [params]="params()">
   <ng-template>
     <textarea
-      [field]="field()"
+      [field]="$any(field())"
       [attr.id]="params().id"
       [attr.placeholder]="params().placeholder"
       [attr.rows]="params().rows"

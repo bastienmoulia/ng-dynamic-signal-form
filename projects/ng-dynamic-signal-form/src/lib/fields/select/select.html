@@ -1,15 +1,15 @@
-<ngdsf-field-template [field]="field()" [params]="params()">
+<ngdsf-field-template [field]="$any(field())" [params]="params()">
   <ng-template>
     <select
-      [field]="field()"
+      [field]="$any(field())"
       [attr.id]="params().id"
       [attr.multiple]="params().multiple"
       [attr.size]="params().size"
       [attr.autocomplete]="'noop'"
       [class]="params().className"
     >
-      @if (params().options) { @for (item of params().options; track $index) { @if (item.type
-      === 'optgroup') {
+      @if (params().options) { @for (item of params().options; track $index) { @if (item.type ===
+      'optgroup') {
       <optgroup [label]="item.label" [attr.disabled]="item.disabled ? true : null">
         @for (option of item.options; track option.value) {
         <option [value]="option.value" [attr.disabled]="option.disabled ? true : null">

@@ -1,5 +1,10 @@
-<ngdsf-field-template [field]="field()" [params]="params()">
+<ngdsf-field-template [field]="$any(field())" [params]="params()">
   <ng-template>
-    <input type="hidden" [field]="field()" [attr.id]="params().id" [class]="params().className" />
+    <input
+      type="hidden"
+      [field]="$any(field())"
+      [attr.id]="params().id"
+      [class]="params().className"
+    />
   </ng-template>
 </ngdsf-field-template>

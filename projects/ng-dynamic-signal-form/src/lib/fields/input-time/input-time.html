@@ -1,8 +1,8 @@
-<ngdsf-field-template [field]="field()" [params]="params()">
+<ngdsf-field-template [field]="$any(field())" [params]="params()">
   <ng-template>
     <input
       type="time"
-      [field]="field()"
+      [field]="$any(field())"
       [attr.id]="params().id"
       [attr.placeholder]="params().placeholder"
       [attr.step]="params().step"

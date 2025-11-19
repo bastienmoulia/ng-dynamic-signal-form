@@ -1,8 +1,8 @@
-<ngdsf-field-template [field]="field()" [params]="params()">
+<ngdsf-field-template [field]="$any(field())" [params]="params()">
   <ng-template>
     <input
       type="file"
-      [field]="field()"
+      [field]="$any(field())"
       [attr.id]="params().id"
       [attr.accept]="params().accept"
       [attr.multiple]="params().multiple"
