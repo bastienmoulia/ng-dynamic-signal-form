@@ -5,6 +5,13 @@
         <a routerLink="/">ng-flex-form</a>
       </h1>
       <nav class="header-nav">
+        <button class="theme-toggle" (click)="toggleTheme()" type="button">
+          @if (isDarkMode()) {
+            <span>☀️ Light</span>
+          } @else {
+            <span>🌙 Dark</span>
+          }
+        </button>
         <a
           href="https://github.com/bastienmoulia/ng-signal-forms-components"
           target="_blank"
