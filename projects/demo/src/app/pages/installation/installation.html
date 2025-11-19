@@ -63,14 +63,14 @@ npm link ng-dynamic-signal-form</code></pre>
     <pre><code>import &#123; Component, signal &#125; from '&#64;angular/core';
 import &#123; form, required &#125; from '&#64;angular/forms/signals';
 import &#123; 
-  NgdsfFields, 
-  NgdsfFieldType, 
-  NgdsfFormParams 
+  NgffFields, 
+  NgffFieldType, 
+  NgffFormParams 
 &#125; from 'ng-dynamic-signal-form';
 
 &#64;Component(&#123;
   selector: 'app-my-form',
-  imports: [NgdsfFields],
+  imports: [NgffFields],
   template: `
     &lt;form&gt;
       &lt;ngff-fields [params]="params" [form]="myForm" /&gt;
@@ -80,9 +80,9 @@ import &#123;
 export class MyFormComponent &#123;
   model = signal(&#123; username: '' &#125;);
   
-  params: NgdsfFormParams = &#123;
+  params: NgffFormParams = &#123;
     username: &#123; 
-      type: NgdsfFieldType.InputText, 
+      type: NgffFieldType.InputText, 
       label: 'Username' 
     &#125;
   &#125;;
@@ -96,13 +96,13 @@ export class MyFormComponent &#123;
   <section class="doc-section">
     <h2>Importing Individual Components</h2>
     <p>You can also import individual field components directly:</p>
-    <pre><code>import &#123; NgdsfInputText &#125; from 'ng-dynamic-signal-form';
-import &#123; NgdsfInputEmail &#125; from 'ng-dynamic-signal-form';
-import &#123; NgdsfSelect &#125; from 'ng-dynamic-signal-form';
+    <pre><code>import &#123; NgffInputText &#125; from 'ng-dynamic-signal-form';
+import &#123; NgffInputEmail &#125; from 'ng-dynamic-signal-form';
+import &#123; NgffSelect &#125; from 'ng-dynamic-signal-form';
 
 &#64;Component(&#123;
   selector: 'app-custom-form',
-  imports: [NgdsfInputText, NgdsfInputEmail, NgdsfSelect],
+  imports: [NgffInputText, NgffInputEmail, NgffSelect],
   template: `
     &lt;ngff-input-text [field]="() =&gt; form.name()" [params]="nameParams" /&gt;
     &lt;ngff-input-email [field]="() =&gt; form.email()" [params]="emailParams" /&gt;

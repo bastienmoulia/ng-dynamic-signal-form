@@ -46,11 +46,11 @@
     <h2>Quick Example</h2>
     <pre><code>import &#123; Component &#125; from '&#64;angular/core';
 import &#123; form, required, email &#125; from '&#64;angular/forms/signals';
-import &#123; NgdsfFields, NgdsfFieldType, NgdsfFormParams &#125; from 'ng-dynamic-signal-form';
+import &#123; NgffFields, NgffFieldType, NgffFormParams &#125; from 'ng-dynamic-signal-form';
 
 &#64;Component(&#123;
   selector: 'my-form',
-  imports: [NgdsfFields],
+  imports: [NgffFields],
   template: `
     &lt;form (submit)="onSubmit($event)"&gt;
       &lt;ngff-fields [params]="formParams" [form]="myForm" /&gt;
@@ -64,14 +64,14 @@ export class MyForm &#123;
     email: '',
   &#125;);
 
-  formParams: NgdsfFormParams = &#123;
+  formParams: NgffFormParams = &#123;
     name: &#123; 
-      type: NgdsfFieldType.InputText, 
+      type: NgffFieldType.InputText, 
       label: 'Name', 
       placeholder: 'Enter your name' 
     &#125;,
     email: &#123; 
-      type: NgdsfFieldType.InputEmail, 
+      type: NgffFieldType.InputEmail, 
       label: 'Email', 
       placeholder: 'Enter your email' 
     &#125;,

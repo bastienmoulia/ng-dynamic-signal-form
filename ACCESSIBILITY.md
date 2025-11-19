@@ -10,7 +10,7 @@ The library is designed with accessibility in mind, following WCAG 2.1 Level AA 
 
 ### Basic Input Fields
 
-All input field components (`NgdsfInputText`, `NgdsfInputEmail`, etc.) support standard HTML5 accessibility features:
+All input field components (`NgffInputText`, `NgffInputEmail`, etc.) support standard HTML5 accessibility features:
 
 - **Labels**: Use the `label` parameter to provide visible labels for all form fields
 - **Required Fields**: Automatically display an asterisk (\*) for required fields
@@ -19,9 +19,9 @@ All input field components (`NgdsfInputText`, `NgdsfInputEmail`, etc.) support s
 - **Readonly State**: Use `readonly` parameter for read-only fields
 
 ```typescript
-params: NgdsfFormParams = {
+params: NgffFormParams = {
   email: {
-    type: NgdsfFieldType.InputEmail,
+    type: NgffFieldType.InputEmail,
     label: 'Email Address', // Visible label
     placeholder: 'user@example.com', // Additional hint
   },
@@ -33,9 +33,9 @@ params: NgdsfFormParams = {
 Always provide unique `id` values for form fields to ensure proper label association:
 
 ```typescript
-params: NgdsfFormParams = {
+params: NgffFormParams = {
   email: {
-    type: NgdsfFieldType.InputEmail,
+    type: NgffFieldType.InputEmail,
     id: 'user-email', // Unique identifier
     label: 'Email Address',
   },
@@ -46,7 +46,7 @@ params: NgdsfFormParams = {
 
 ### Field-Level Errors
 
-The `NgdsfFieldErrors` component displays validation errors accessibly:
+The `NgffFieldErrors` component displays validation errors accessibly:
 
 - Errors are announced to screen readers when they appear
 - Errors are associated with their fields through ARIA
@@ -54,14 +54,14 @@ The `NgdsfFieldErrors` component displays validation errors accessibly:
 
 ```typescript
 // In your template
-<ngdsf-input-text [field]="form.email" [params]="emailParams" />
-<ngdsf-field-errors [field]="form.email" />
+<ngff-input-text [field]="form.email" [params]="emailParams" />
+<ngff-field-errors [field]="form.email" />
 ```
 
 Configuration options:
 
 ```typescript
-fieldErrorsParams: NgdsfFieldErrorsParams = {
+fieldErrorsParams: NgffFieldErrorsParams = {
   showWhen: 'touched', // 'touched', 'dirty', or 'always'
   className: 'custom-error-class',
 };
@@ -69,7 +69,7 @@ fieldErrorsParams: NgdsfFieldErrorsParams = {
 
 ### Form-Level Errors
 
-The `NgdsfFormErrors` component provides a summary of all form validation errors:
+The `NgffFormErrors` component provides a summary of all form validation errors:
 
 - Useful at the top of forms for screen reader users
 - Lists all field errors in one place
@@ -77,7 +77,7 @@ The `NgdsfFormErrors` component provides a summary of all form validation errors
 
 ```typescript
 // In your template
-<ngdsf-form-errors
+<ngff-form-errors
   [form]="form"
   [params]="{ title: 'Please correct the following errors:' }"
 />
@@ -87,16 +87,16 @@ The `NgdsfFormErrors` component provides a summary of all form validation errors
 
 ### Field Groups
 
-The `NgdsfFieldGroup` component uses semantic HTML (`<fieldset>` and `<legend>`) for accessible field grouping:
+The `NgffFieldGroup` component uses semantic HTML (`<fieldset>` and `<legend>`) for accessible field grouping:
 
 ```typescript
-<ngdsf-field-group [params]="{
+<ngff-field-group [params]="{
   title: 'Personal Information',
   description: 'Enter your personal details below'
 }">
-  <ngdsf-input-text [field]="form.firstName" [params]="firstNameParams" />
-  <ngdsf-input-text [field]="form.lastName" [params]="lastNameParams" />
-</ngdsf-field-group>
+  <ngff-input-text [field]="form.firstName" [params]="firstNameParams" />
+  <ngff-input-text [field]="form.lastName" [params]="lastNameParams" />
+</ngff-field-group>
 ```
 
 Benefits:
@@ -107,7 +107,7 @@ Benefits:
 
 ### Tabs
 
-The `NgdsfTabs` and `NgdsfTabPanel` components implement the ARIA tabs pattern:
+The `NgffTabs` and `NgffTabPanel` components implement the ARIA tabs pattern:
 
 - Uses proper ARIA roles (`tablist`, `tab`, `tabpanel`)
 - Manages focus appropriately
@@ -115,21 +115,21 @@ The `NgdsfTabs` and `NgdsfTabPanel` components implement the ARIA tabs pattern:
 - Associates tabs with their panels using `aria-controls` and `aria-labelledby`
 
 ```typescript
-tabsParams: NgdsfTabsParams = {
+tabsParams: NgffTabsParams = {
   tabs: [
     { id: 'personal', label: 'Personal Info' },
     { id: 'contact', label: 'Contact Details' },
   ],
 };
 
-<ngdsf-tabs [params]="tabsParams">
-  <ngdsf-tab-panel [params]="{ tabId: 'personal', activeTabId: tabs.activeTab() }">
+<ngff-tabs [params]="tabsParams">
+  <ngff-tab-panel [params]="{ tabId: 'personal', activeTabId: tabs.activeTab() }">
     <!-- Personal information fields -->
-  </ngdsf-tab-panel>
-  <ngdsf-tab-panel [params]="{ tabId: 'contact', activeTabId: tabs.activeTab() }">
+  </ngff-tab-panel>
+  <ngff-tab-panel [params]="{ tabId: 'contact', activeTabId: tabs.activeTab() }">
     <!-- Contact fields -->
-  </ngdsf-tab-panel>
-</ngdsf-tabs>
+  </ngff-tab-panel>
+</ngff-tabs>
 ```
 
 ## Best Practices
@@ -140,10 +140,10 @@ Never rely solely on placeholders. Always use the `label` parameter:
 
 ```typescript
 // ✅ Good
-{ type: NgdsfFieldType.InputText, label: 'Full Name', placeholder: 'John Doe' }
+{ type: NgffFieldType.InputText, label: 'Full Name', placeholder: 'John Doe' }
 
 // ❌ Bad
-{ type: NgdsfFieldType.InputText, placeholder: 'Enter your name' }
+{ type: NgffFieldType.InputText, placeholder: 'Enter your name' }
 ```
 
 ### 2. Use Semantic Field Types
@@ -153,16 +153,16 @@ Choose the most appropriate field type for better accessibility:
 ```typescript
 // Use specific input types
 {
-  type: NgdsfFieldType.InputEmail;
+  type: NgffFieldType.InputEmail;
 } // For email addresses
 {
-  type: NgdsfFieldType.InputTel;
+  type: NgffFieldType.InputTel;
 } // For phone numbers
 {
-  type: NgdsfFieldType.InputUrl;
+  type: NgffFieldType.InputUrl;
 } // For URLs
 {
-  type: NgdsfFieldType.InputDate;
+  type: NgffFieldType.InputDate;
 } // For dates
 ```
 
@@ -182,14 +182,14 @@ email(p.email, { message: 'Invalid' });
 
 ### 4. Group Related Fields
 
-Use `NgdsfFieldGroup` to group related fields:
+Use `NgffFieldGroup` to group related fields:
 
 ```typescript
-<ngdsf-field-group [params]="{ title: 'Address Information' }">
-  <ngdsf-input-text [field]="form.street" [params]="streetParams" />
-  <ngdsf-input-text [field]="form.city" [params]="cityParams" />
-  <ngdsf-input-text [field]="form.zipCode" [params]="zipParams" />
-</ngdsf-field-group>
+<ngff-field-group [params]="{ title: 'Address Information' }">
+  <ngff-input-text [field]="form.street" [params]="streetParams" />
+  <ngff-input-text [field]="form.city" [params]="cityParams" />
+  <ngff-input-text [field]="form.zipCode" [params]="zipParams" />
+</ngff-field-group>
 ```
 
 ### 5. Maintain Logical Tab Order
@@ -238,11 +238,11 @@ When form fields or validation errors change dynamically:
 
 ### Select Dropdowns
 
-The `NgdsfSelect` component uses native `<select>` elements for maximum accessibility:
+The `NgffSelect` component uses native `<select>` elements for maximum accessibility:
 
 ```typescript
 {
-  type: NgdsfFieldType.Select,
+  type: NgffFieldType.Select,
   label: 'Country',
   options: [
     { value: '', label: 'Select a country' },
@@ -254,11 +254,11 @@ The `NgdsfSelect` component uses native `<select>` elements for maximum accessib
 
 ### Radio Buttons
 
-Use `NgdsfInputRadio` for mutually exclusive options:
+Use `NgffInputRadio` for mutually exclusive options:
 
 ```typescript
 {
-  type: NgdsfFieldType.InputRadio,
+  type: NgffFieldType.InputRadio,
   label: 'Shipping Method',
   // Use with form group controls
 }
@@ -266,11 +266,11 @@ Use `NgdsfInputRadio` for mutually exclusive options:
 
 ### Checkboxes
 
-Use `NgdsfInputCheckbox` for independent boolean options:
+Use `NgffInputCheckbox` for independent boolean options:
 
 ```typescript
 {
-  type: NgdsfFieldType.InputCheckbox,
+  type: NgffFieldType.InputCheckbox,
   label: 'I agree to the terms and conditions',
 }
 ```
