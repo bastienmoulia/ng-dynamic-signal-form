@@ -3,10 +3,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "esModuleInterop": true,
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "moduleResolution": "bundler",
     "paths": {
       "ng-dynamic-signal-form": [
         "./dist/ng-dynamic-signal-form"
