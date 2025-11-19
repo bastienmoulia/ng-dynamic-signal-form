@@ -21,12 +21,8 @@
         <strong>Signal-Based</strong> - Built with Angular's signals API for reactive state
         management
       </li>
-      <li>
-        <strong>Type-Safe</strong> - Strongly typed field configurations and parameters
-      </li>
-      <li>
-        <strong>Standalone Components</strong> - No NgModules required, fully tree-shakeable
-      </li>
+      <li><strong>Type-Safe</strong> - Strongly typed field configurations and parameters</li>
+      <li><strong>Standalone Components</strong> - No NgModules required, fully tree-shakeable</li>
       <li>
         <strong>Unified Template</strong> - Consistent field wrapper with label, placeholder, and
         custom content projection
@@ -36,8 +32,7 @@
         and form errors
       </li>
       <li>
-        <strong>Layout Components</strong> - Field groups, tabs, and tab panels for organizing
-        forms
+        <strong>Layout Components</strong> - Field groups, tabs, and tab panels for organizing forms
       </li>
     </ul>
   </section>
@@ -90,14 +85,17 @@ export class MyForm &#123;
     &#125;);
   &#125;
 &#125;</code></pre>
+
+    <form (submit)="onSubmit($event)">
+      <ngdsf-fields [params]="formParams" [form]="myForm" />
+      <button type="submit">Submit</button>
+    </form>
   </section>
 
   <section class="doc-section">
     <h2>Next Steps</h2>
     <ul>
-      <li>
-        <a routerLink="/installation">Install the library</a> in your Angular project
-      </li>
+      <li><a routerLink="/installation">Install the library</a> in your Angular project</li>
       <li>Explore the <a routerLink="/components/text-inputs">component documentation</a></li>
       <li>Check out the <a routerLink="/api/field-types">API reference</a></li>
     </ul>
