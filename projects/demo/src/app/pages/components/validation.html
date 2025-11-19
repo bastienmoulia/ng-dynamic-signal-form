@@ -10,36 +10,36 @@
       <h3>Live Demo</h3>
       <form class="demo-form">
         <div>
-          <ngdsf-input-text
+          <ngff-input-text
             [field]="usernameField"
             [params]="{
               label: 'Username',
               placeholder: 'Enter username'
             }"
           />
-          <ngdsf-field-errors [field]="usernameField" />
+          <ngff-field-errors [field]="usernameField" />
         </div>
 
         <div>
-          <ngdsf-input-email
+          <ngff-input-email
             [field]="emailField"
             [params]="{
               label: 'Email',
               placeholder: 'Enter email'
             }"
           />
-          <ngdsf-field-errors [field]="emailField" />
+          <ngff-field-errors [field]="emailField" />
         </div>
       </form>
     </div>
 
     <div class="code-example">
       <h4>Usage</h4>
-      <pre><code>&lt;ngdsf-input-text
+      <pre><code>&lt;ngff-input-text
   [field]="() =&gt; form.username()"
   [params]="&#123; label: 'Username' &#125;"
 /&gt;
-&lt;ngdsf-field-errors [field]="() =&gt; form.username()" /&gt;</code></pre>
+&lt;ngff-field-errors [field]="() =&gt; form.username()" /&gt;</code></pre>
     </div>
   </section>
 
@@ -50,7 +50,7 @@
     <div class="demo-container">
       <h3>Live Demo</h3>
       <form class="demo-form">
-        <ngdsf-form-errors [form]="demoForm" />
+        <ngff-form-errors [form]="demoForm" />
       </form>
     </div>
 
@@ -58,7 +58,7 @@
       <h4>Usage</h4>
       <pre><code>&lt;form&gt;
   &lt;!-- form fields --&gt;
-  &lt;ngdsf-form-errors [form]="myForm" /&gt;
+  &lt;ngff-form-errors [form]="myForm" /&gt;
 &lt;/form&gt;</code></pre>
     </div>
   </section>

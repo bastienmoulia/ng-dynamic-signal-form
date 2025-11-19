@@ -1,0 +1,14 @@
+<ngff-field-template [field]="$any(field())" [params]="params()">
+  <ng-template>
+    <input
+      type="email"
+      [field]="$any(field())"
+      [attr.id]="params().id"
+      [attr.placeholder]="params().placeholder"
+      [attr.autocomplete]="params().autocomplete ?? 'noop'"
+      [attr.size]="params().size"
+      [attr.multiple]="params().multiple"
+      [class]="params().className"
+    />
+  </ng-template>
+</ngff-field-template>

@@ -9,7 +9,7 @@
     <div class="demo-container">
       <h3>Live Demo</h3>
       <form class="demo-form">
-        <ngdsf-select
+        <ngff-select
           [field]="countryField"
           [params]="{
             label: 'Country',
@@ -45,7 +45,7 @@
 
     <div class="code-example">
       <h4>Usage</h4>
-      <pre><code>&lt;ngdsf-select
+      <pre><code>&lt;ngff-select
   [field]="() =&gt; form.country()"
   [params]="&#123;
     label: 'Country',
@@ -96,13 +96,13 @@
     <div class="demo-container">
       <h3>Live Demo</h3>
       <form class="demo-form">
-        <ngdsf-input-checkbox
+        <ngff-input-checkbox
           [field]="termsField"
           [params]="{
             label: 'I accept the terms and conditions'
           }"
         />
-        <ngdsf-input-checkbox
+        <ngff-input-checkbox
           [field]="newsletterField"
           [params]="{
             label: 'Subscribe to newsletter'
@@ -116,7 +116,7 @@
 
     <div class="code-example">
       <h4>Usage</h4>
-      <pre><code>&lt;ngdsf-input-checkbox
+      <pre><code>&lt;ngff-input-checkbox
   [field]="() =&gt; form.terms()"
   [params]="&#123;
     label: 'I accept the terms and conditions'
@@ -135,21 +135,21 @@
         <div style="margin-bottom: 0.5rem;">
           <strong>Gender:</strong>
         </div>
-        <ngdsf-input-radio
+        <ngff-input-radio
           [field]="genderField"
           [params]="{
             label: 'Male',
             value: 'male'
           }"
         />
-        <ngdsf-input-radio
+        <ngff-input-radio
           [field]="genderField"
           [params]="{
             label: 'Female',
             value: 'female'
           }"
         />
-        <ngdsf-input-radio
+        <ngff-input-radio
           [field]="genderField"
           [params]="{
             label: 'Other',
@@ -164,14 +164,14 @@
 
     <div class="code-example">
       <h4>Usage</h4>
-      <pre><code>&lt;ngdsf-input-radio
+      <pre><code>&lt;ngff-input-radio
   [field]="() =&gt; form.gender()"
   [params]="&#123;
     label: 'Male',
     value: 'male'
   &#125;"
 /&gt;
-&lt;ngdsf-input-radio
+&lt;ngff-input-radio
   [field]="() =&gt; form.gender()"
   [params]="&#123;
     label: 'Female',

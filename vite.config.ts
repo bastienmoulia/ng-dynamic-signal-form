@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [tsconfigPaths()],
   resolve: {
     alias: {
-      'ng-dynamic-signal-form': 'projects/ng-dynamic-signal-form/src/public-api.ts',
+      'ng-flex-form': 'projects/ng-flex-form/src/public-api.ts',
     },
   },
 });

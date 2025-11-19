@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { form, required } from '@angular/forms/signals';
 import { JsonPipe } from '@angular/common';
-import { NgdsfInputNumber, NgdsfInputRange } from 'ng-dynamic-signal-form';
+import { NgffInputNumber, NgffInputRange } from 'ng-flex-form';
 
 @Component({
   selector: 'app-number-inputs',
-  imports: [JsonPipe, NgdsfInputNumber, NgdsfInputRange],
+  imports: [JsonPipe, NgffInputNumber, NgffInputRange],
   templateUrl: './number-inputs.html',
   styleUrl: './number-inputs.css',
 })

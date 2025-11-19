@@ -1,25 +1,25 @@
 import { Component, signal } from '@angular/core';
 import { form, required, maxLength, pattern } from '@angular/forms/signals';
 import {
-  NgdsfInputText,
-  NgdsfInputEmail,
-  NgdsfInputPassword,
-  NgdsfInputSearch,
-  NgdsfInputTel,
-  NgdsfInputUrl,
-  NgdsfTextarea,
-} from 'ng-dynamic-signal-form';
+  NgffInputText,
+  NgffInputEmail,
+  NgffInputPassword,
+  NgffInputSearch,
+  NgffInputTel,
+  NgffInputUrl,
+  NgffTextarea,
+} from 'ng-flex-form';
 
 @Component({
   selector: 'app-text-inputs',
   imports: [
-    NgdsfInputText,
-    NgdsfInputEmail,
-    NgdsfInputPassword,
-    NgdsfInputSearch,
-    NgdsfInputTel,
-    NgdsfInputUrl,
-    NgdsfTextarea,
+    NgffInputText,
+    NgffInputEmail,
+    NgffInputPassword,
+    NgffInputSearch,
+    NgffInputTel,
+    NgffInputUrl,
+    NgffTextarea,
   ],
   templateUrl: './text-inputs.html',
   styleUrl: './text-inputs.css',

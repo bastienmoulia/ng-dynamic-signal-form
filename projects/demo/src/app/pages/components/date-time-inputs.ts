@@ -1,21 +1,21 @@
 import { Component, signal } from '@angular/core';
 import { form } from '@angular/forms/signals';
 import {
-  NgdsfInputDate,
-  NgdsfInputTime,
-  NgdsfInputDatetimeLocal,
-  NgdsfInputMonth,
-  NgdsfInputWeek,
-} from 'ng-dynamic-signal-form';
+  NgffInputDate,
+  NgffInputTime,
+  NgffInputDatetimeLocal,
+  NgffInputMonth,
+  NgffInputWeek,
+} from 'ng-flex-form';
 
 @Component({
   selector: 'app-date-time-inputs',
   imports: [
-    NgdsfInputDate,
-    NgdsfInputTime,
-    NgdsfInputDatetimeLocal,
-    NgdsfInputMonth,
-    NgdsfInputWeek,
+    NgffInputDate,
+    NgffInputTime,
+    NgffInputDatetimeLocal,
+    NgffInputMonth,
+    NgffInputWeek,
   ],
   templateUrl: './date-time-inputs.html',
   styleUrl: './date-time-inputs.css',

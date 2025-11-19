@@ -1,8 +1,8 @@
-# ng-dynamic-signal-form
+# ng-flex-form (Flex Form)
 
 Dynamic, signal-driven Angular form field components with a consistent template wrapper and a growing catalogue of HTML input types. This repository contains:
 
-- The component library: `ng-dynamic-signal-form`
+- The component library: `ng-flex-form`
 - A demo application showcasing all field types
 
 > Built for Angular v21 RC using standalone components, signals-based form state (`@angular/forms/signals`), and strict TypeScript.
@@ -10,28 +10,28 @@ Dynamic, signal-driven Angular form field components with a consistent template 
 ## Features
 
 - 20+ input/select/textarea field components (text, email, date, time, number, checkbox, radio, range, file, color, month, week, datetime-local, search, tel, url, hidden, password, select, textarea)
-- Unified field template (`NgdsfFieldTemplate`) for label, placeholder and custom projected content
-- Strongly typed field enum (`NgdsfFieldType`) and params interfaces for per-field configuration
+- Unified field template (`NgffFieldTemplate`) for label, placeholder and custom projected content
+- Strongly typed field enum (`NgffFieldType`) and params interfaces for per-field configuration
 - Signal-centric integration: each field receives a `() => FieldState` accessor for reactive state
 - Standalone, tree-shakeable Angular components (no NgModules)
 - Library build & demo app build via standard Angular CLI
 
 ## Live Demo
 
-https://bastienmoulia.github.io/ng-dynamic-signal-form/
+https://bastienmoulia.github.io/ng-flex-form/
 
 ## Installation (library)
 
 The package is not yet published to npm (version `0.0.1`). To consume directly from source:
 
 ```bash
-git clone https://github.com/bastienmoulia/ng-dynamic-signal-form.git
-cd ng-dynamic-signal-form
+git clone https://github.com/bastienmoulia/ng-flex-form.git
+cd ng-flex-form
 npm install
-ng build ng-dynamic-signal-form
+ng build ng-flex-form
 ```
 
-Then reference the dist output (`dist/ng-dynamic-signal-form`) or use a workspace project reference.
+Then reference the dist output (`dist/ng-flex-form`) or use a workspace project reference.
 
 ## Quick Usage
 
@@ -39,28 +39,28 @@ Import the components you need (they are standalone) and define your form params
 
 ```ts
 import { Component } from '@angular/core';
-import { NgdsfFields, NgdsfFieldType, NgdsfFormParams } from 'ng-dynamic-signal-form';
+import { NgffFields, NgffFieldType, NgffFormParams } from 'ng-flex-form';
 
 @Component({
   selector: 'example-form',
-  imports: [NgdsfFields],
+  imports: [NgffFields],
   template: `
     <form>
-      <ngdsf-fields [params]="params" [form]="formSignal" />
+      <ngff-fields [params]="params" [form]="formSignal" />
     </form>
   `,
 })
 export class ExampleFormComponent {
-  params: NgdsfFormParams = {
-    username: { type: NgdsfFieldType.InputText, label: 'Username', placeholder: 'Your name' },
-    email: { type: NgdsfFieldType.InputEmail, label: 'Email' },
+  params: NgffFormParams = {
+    username: { type: NgffFieldType.InputText, label: 'Username', placeholder: 'Your name' },
+    email: { type: NgffFieldType.InputEmail, label: 'Email' },
   };
   // formSignal: define using @angular/forms/signals API
   formSignal = /* your form signal */ null as any;
 }
 ```
 
-Each concrete field component (e.g. `NgdsfInputText`) accepts:
+Each concrete field component (e.g. `NgffInputText`) accepts:
 
 ```ts
 params = {
@@ -75,12 +75,12 @@ params = {
 
 ## Public API Surface
 
-Exported from `projects/ng-dynamic-signal-form/src/public-api.ts`:
+Exported from `projects/ng-flex-form/src/public-api.ts`:
 
-- `NgdsfFields` – orchestrates rendering based on a form signal structure
-- `NgdsfFieldTemplate` – wrapper/template component
-- All individual field components: `NgdsfInputText`, `NgdsfInputEmail`, `NgdsfInputDate`, ... `NgdsfTextarea`, `NgdsfSelect`
-- `NgdsfFieldType` enum & associated interfaces
+- `NgffFields` – orchestrates rendering based on a form signal structure
+- `NgffFieldTemplate` – wrapper/template component
+- All individual field components: `NgffInputText`, `NgffInputEmail`, `NgffInputDate`, ... `NgffTextarea`, `NgffSelect`
+- `NgffFieldType` enum & associated interfaces
 
 ## Development
 
@@ -137,9 +137,9 @@ Before publishing, ensure:
 
 1. You have an npm account with publishing permissions
 2. You are logged in to npm: `npm login`
-3. The package version is updated in `projects/ng-dynamic-signal-form/package.json`
+3. The package version is updated in `projects/ng-flex-form/package.json`
 4. All tests pass: `npm test`
-5. The library builds successfully: `ng build ng-dynamic-signal-form`
+5. The library builds successfully: `ng build ng-flex-form`
 6. Peer dependencies match your target Angular version
 
 ### Version Management
@@ -151,7 +151,7 @@ Update the version following [Semantic Versioning](https://semver.org/):
 - **Major release** (X.0.0): Breaking changes
 
 ```bash
-cd projects/ng-dynamic-signal-form
+cd projects/ng-flex-form
 npm version patch  # or minor, or major
 ```
 
@@ -160,13 +160,13 @@ npm version patch  # or minor, or major
 1. **Build the library**
 
 ```bash
-ng build ng-dynamic-signal-form
+ng build ng-flex-form
 ```
 
 2. **Verify the build output**
 
 ```bash
-cd dist/ng-dynamic-signal-form
+cd dist/ng-flex-form
 ls -la  # Check that all files are present
 cat package.json  # Verify package.json is correct
 ```
@@ -194,7 +194,7 @@ npm publish --dry-run
 
 After publishing:
 
-1. Verify the package on npm: https://www.npmjs.com/package/ng-dynamic-signal-form
+1. Verify the package on npm: https://www.npmjs.com/package/ng-flex-form
 2. Create a GitHub release with release notes
 3. Update the README with the new version number
 4. Tag the release in git:
@@ -227,8 +227,8 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: npm test
-      - run: ng build ng-dynamic-signal-form
-      - run: cd dist/ng-dynamic-signal-form && npm publish --access public
+      - run: ng build ng-flex-form
+      - run: cd dist/ng-flex-form && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 ```
@@ -261,7 +261,7 @@ This library is built with accessibility in mind, following WCAG 2.1 guidelines 
 
 ## Deployment
 
-See `DEPLOYMENT.md` for GitHub Pages workflow details. The demo app is built with a base href of `/ng-dynamic-signal-form/`.
+See `DEPLOYMENT.md` for GitHub Pages workflow details. The demo app is built with a base href of `/ng-flex-form/`.
 
 ## Contributing
 

@@ -26,21 +26,21 @@ cd ng-signal-forms-components</code></pre>
     <pre><code>npm install --ignore-scripts</code></pre>
 
     <h3>Step 3: Build the Library</h3>
-    <pre><code>ng build ng-dynamic-signal-form</code></pre>
+    <pre><code>ng build ng-flex-form</code></pre>
 
     <h3>Step 4: Link to Your Project</h3>
     <p>You can use the built library in several ways:</p>
 
     <h4>Option A: Copy the dist folder</h4>
-    <pre><code>cp -r dist/ng-dynamic-signal-form /path/to/your/project/node_modules/</code></pre>
+    <pre><code>cp -r dist/ng-flex-form /path/to/your/project/node_modules/</code></pre>
 
     <h4>Option B: Use npm link</h4>
     <pre><code># In the ng-signal-forms-components directory
-cd dist/ng-dynamic-signal-form
+cd dist/ng-flex-form
 npm link
 
 # In your project directory
-npm link ng-dynamic-signal-form</code></pre>
+npm link ng-flex-form</code></pre>
 
     <h4>Option C: Use a workspace</h4>
     <p>
@@ -52,9 +52,9 @@ npm link ng-dynamic-signal-form</code></pre>
   <section class="doc-section">
     <h2>From npm (Future)</h2>
     <p>Once published to npm, installation will be straightforward:</p>
-    <pre><code>npm install ng-dynamic-signal-form</code></pre>
+    <pre><code>npm install ng-flex-form</code></pre>
     <p>Or with yarn:</p>
-    <pre><code>yarn add ng-dynamic-signal-form</code></pre>
+    <pre><code>yarn add ng-flex-form</code></pre>
   </section>
 
   <section class="doc-section">
@@ -63,26 +63,26 @@ npm link ng-dynamic-signal-form</code></pre>
     <pre><code>import &#123; Component, signal &#125; from '&#64;angular/core';
 import &#123; form, required &#125; from '&#64;angular/forms/signals';
 import &#123; 
-  NgdsfFields, 
-  NgdsfFieldType, 
-  NgdsfFormParams 
-&#125; from 'ng-dynamic-signal-form';
+  NgffFields, 
+  NgffFieldType, 
+  NgffFormParams 
+&#125; from 'ng-flex-form';
 
 &#64;Component(&#123;
   selector: 'app-my-form',
-  imports: [NgdsfFields],
+  imports: [NgffFields],
   template: `
     &lt;form&gt;
-      &lt;ngdsf-fields [params]="params" [form]="myForm" /&gt;
+      &lt;ngff-fields [params]="params" [form]="myForm" /&gt;
     &lt;/form&gt;
   `,
 &#125;)
 export class MyFormComponent &#123;
   model = signal(&#123; username: '' &#125;);
   
-  params: NgdsfFormParams = &#123;
+  params: NgffFormParams = &#123;
     username: &#123; 
-      type: NgdsfFieldType.InputText, 
+      type: NgffFieldType.InputText, 
       label: 'Username' 
     &#125;
   &#125;;
@@ -96,16 +96,16 @@ export class MyFormComponent &#123;
   <section class="doc-section">
     <h2>Importing Individual Components</h2>
     <p>You can also import individual field components directly:</p>
-    <pre><code>import &#123; NgdsfInputText &#125; from 'ng-dynamic-signal-form';
-import &#123; NgdsfInputEmail &#125; from 'ng-dynamic-signal-form';
-import &#123; NgdsfSelect &#125; from 'ng-dynamic-signal-form';
+    <pre><code>import &#123; NgffInputText &#125; from 'ng-flex-form';
+import &#123; NgffInputEmail &#125; from 'ng-flex-form';
+import &#123; NgffSelect &#125; from 'ng-flex-form';
 
 &#64;Component(&#123;
   selector: 'app-custom-form',
-  imports: [NgdsfInputText, NgdsfInputEmail, NgdsfSelect],
+  imports: [NgffInputText, NgffInputEmail, NgffSelect],
   template: `
-    &lt;ngdsf-input-text [field]="() =&gt; form.name()" [params]="nameParams" /&gt;
-    &lt;ngdsf-input-email [field]="() =&gt; form.email()" [params]="emailParams" /&gt;
+    &lt;ngff-input-text [field]="() =&gt; form.name()" [params]="nameParams" /&gt;
+    &lt;ngff-input-email [field]="() =&gt; form.email()" [params]="emailParams" /&gt;
   `,
 &#125;)
 export class CustomFormComponent &#123;
@@ -127,7 +127,7 @@ export class CustomFormComponent &#123;
     <h3>Import Errors</h3>
     <p>If you see "Cannot find module" errors:</p>
     <ul>
-      <li>Verify the library is built: check that <code>dist/ng-dynamic-signal-form</code> exists</li>
+      <li>Verify the library is built: check that <code>dist/ng-flex-form</code> exists</li>
       <li>Clear your node_modules cache: <code>rm -rf node_modules && npm install</code></li>
       <li>Restart your development server</li>
     </ul>

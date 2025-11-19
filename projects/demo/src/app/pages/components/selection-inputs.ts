@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { form, required } from '@angular/forms/signals';
 import { JsonPipe } from '@angular/common';
-import { NgdsfSelect, NgdsfInputCheckbox, NgdsfInputRadio } from 'ng-dynamic-signal-form';
+import { NgffSelect, NgffInputCheckbox, NgffInputRadio } from 'ng-flex-form';
 
 @Component({
   selector: 'app-selection-inputs',
-  imports: [JsonPipe, NgdsfSelect, NgdsfInputCheckbox, NgdsfInputRadio],
+  imports: [JsonPipe, NgffSelect, NgffInputCheckbox, NgffInputRadio],
   templateUrl: './selection-inputs.html',
   styleUrl: './selection-inputs.css',
 })

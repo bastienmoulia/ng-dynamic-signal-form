@@ -1,6 +1,6 @@
 # End-to-End Tests with Playwright
 
-This directory contains end-to-end tests for the ng-dynamic-signal-form demo application using Playwright.
+This directory contains end-to-end tests for the ng-flex-form demo application using Playwright.
 
 ## Setup
 

@@ -1,0 +1,13 @@
+<ngff-field-template [field]="$any(field())" [params]="params()">
+  <ng-template>
+    <input
+      type="week"
+      [field]="$any(field())"
+      [attr.id]="params().id"
+      [attr.placeholder]="params().placeholder"
+      [attr.step]="params().step"
+      [attr.autocomplete]="'noop'"
+      [class]="params().className"
+    />
+  </ng-template>
+</ngff-field-template>
