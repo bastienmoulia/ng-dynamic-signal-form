@@ -22,30 +22,53 @@ export class Home {
     message: '',
   });
 
-  formParams = signal<NgffFormParams>({
-    name: { type: NgffFieldType.InputText, label: 'Name', placeholder: 'Enter your name', className: 'custom-input-class' },
-    email: {
+  formParams = signal<NgffFormParams>([
+    {
+      key: 'name',
+      type: NgffFieldType.InputText,
+      label: 'Name',
+      placeholder: 'Enter your name',
+      className: 'custom-input-class',
+    },
+    {
+      key: 'email',
       type: NgffFieldType.InputEmail,
       label: 'Custom Email Label',
       placeholder: 'Enter your email',
       className: 'email-input',
     },
-    password: {
+    {
+      key: 'password',
       type: NgffFieldType.InputPassword,
       label: 'Password',
       placeholder: 'Enter your password',
     },
-    eventDate: {
+    {
+      key: 'eventDate',
       type: NgffFieldType.InputDate,
       label: 'Event Date',
       placeholder: 'Select a date',
     },
-    eventTime: {
+    {
+      key: 'eventDate',
+      type: NgffFieldType.InputDate,
+      label: 'Event Date',
+      placeholder: 'Select a date',
+    },
+    {
+      key: 'eventTime',
       type: NgffFieldType.InputTime,
       label: 'Event Time',
       placeholder: 'Select a time',
     },
-    country: {
+    {
+      key: 'eventTime',
+      type: NgffFieldType.InputTime,
+      label: 'Event Time',
+      placeholder: 'Select a time',
+    },
+    {
+      key: 'country',
       type: NgffFieldType.Select,
       label: 'Country',
       className: 'select-field',
@@ -83,14 +106,15 @@ export class Home {
         },
       ],
     },
-    message: {
+    {
+      key: 'message',
       type: NgffFieldType.Textarea,
       label: 'Message',
       placeholder: 'Enter your message',
       rows: 5,
       className: 'textarea-field',
     },
-  });
+  ]);
 
   form = form(this.model, (p) => {
     required(p.email, {
@@ -137,11 +161,11 @@ export class Home {
         message: 'New message',
       } as any);
     }
-    if (this.formParams()['message'].label === 'Message') {
+    if (this.formParams().find((param) => param.key === 'message')?.label === 'Message') {
       this.formParams.update((params) => ({
         ...params,
         message: {
-          ...params['message'],
+          ...params.find((param) => param.key === 'message'),
           label: 'Updated Message Label',
         },
       }));
@@ -149,7 +173,7 @@ export class Home {
       this.formParams.update((params) => ({
         ...params,
         message: {
-          ...params['message'],
+          ...params.find((param) => param.key === 'message'),
           label: 'Message',
         },
       }));

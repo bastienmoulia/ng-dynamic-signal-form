@@ -15,10 +15,15 @@ export class GettingStarted {
     email: '',
   });
 
-  formParams: NgffFormParams = {
-    name: { type: NgffFieldType.InputText, label: 'Name', placeholder: 'Enter your name' },
-    email: { type: NgffFieldType.InputEmail, label: 'Email', placeholder: 'Enter your email' },
-  };
+  formParams: NgffFormParams = [
+    { key: 'name', type: NgffFieldType.InputText, label: 'Name', placeholder: 'Enter your name' },
+    {
+      key: 'email',
+      type: NgffFieldType.InputEmail,
+      label: 'Email',
+      placeholder: 'Enter your email',
+    },
+  ];
 
   myForm = form(this.model, (p) => {
     required(p.name, { message: 'Name is required' });

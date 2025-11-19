@@ -51,13 +51,12 @@ export enum NgffWrapperType {
 }
 
 export interface NgffFieldParamsTyped extends NgffFieldParams {
+  key: string;
   type: NgffFieldType | NgffWrapperType;
-  childrens?: NgffFormParams[];
+  childrens?: NgffFieldParamsTyped[];
 }
 
-export interface NgffFormParams {
-  [key: string]: NgffFieldParamsTyped;
-}
+export type NgffFormParams = NgffFieldParamsTyped[];
 
 @Component({
   selector: 'ngff-fields',
@@ -86,10 +85,6 @@ export interface NgffFormParams {
   templateUrl: './fields.html',
 })
 export class NgffFields {
-  params = input.required<{ [key: string]: NgffFieldParamsTyped }>();
+  params = input.required<NgffFieldParamsTyped[]>();
   form = input.required<any>();
-
-  fieldsKeys = computed(() => {
-    return Array.from((this.form()().structure.childrenMap() as Map<string, any>).keys());
-  });
 }

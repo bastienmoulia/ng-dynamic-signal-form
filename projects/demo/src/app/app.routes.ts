@@ -2,6 +2,10 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
+    path: 'home',
+    loadComponent: () => import('./home/home').then((m) => m.Home),
+  },
+  {
     path: '',
     loadComponent: () => import('./shared/components/layout').then((m) => m.Layout),
     children: [
@@ -17,7 +21,8 @@ export const routes: Routes = [
       },
       {
         path: 'installation',
-        loadComponent: () => import('./pages/installation/installation').then((m) => m.Installation),
+        loadComponent: () =>
+          import('./pages/installation/installation').then((m) => m.Installation),
       },
       {
         path: 'components/text-inputs',
