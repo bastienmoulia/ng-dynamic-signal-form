@@ -9,7 +9,7 @@
     <div class="demo-container">
       <h3>Live Demo</h3>
       <form class="demo-form">
-        <ngdsf-input-number
+        <ngff-input-number
           [field]="ageField"
           [params]="{
             label: 'Age',
@@ -19,7 +19,7 @@
             step: 1
           }"
         />
-        <ngdsf-input-number
+        <ngff-input-number
           [field]="quantityField"
           [params]="{
             label: 'Quantity',
@@ -29,7 +29,7 @@
             step: 1
           }"
         />
-        <ngdsf-input-number
+        <ngff-input-number
           [field]="priceField"
           [params]="{
             label: 'Price ($)',
@@ -46,7 +46,7 @@
 
     <div class="code-example">
       <h4>Usage</h4>
-      <pre><code>&lt;ngdsf-input-number
+      <pre><code>&lt;ngff-input-number
   [field]="() =&gt; form.age()"
   [params]="&#123;
     label: 'Age',
@@ -115,7 +115,7 @@
     <div class="demo-container">
       <h3>Live Demo</h3>
       <form class="demo-form">
-        <ngdsf-input-range
+        <ngff-input-range
           [field]="volumeField"
           [params]="{
             label: 'Volume',
@@ -126,7 +126,7 @@
         />
         <div>Current value: {{ model().volume }}</div>
         
-        <ngdsf-input-range
+        <ngff-input-range
           [field]="brightnessField"
           [params]="{
             label: 'Brightness',
@@ -141,7 +141,7 @@
 
     <div class="code-example">
       <h4>Usage</h4>
-      <pre><code>&lt;ngdsf-input-range
+      <pre><code>&lt;ngff-input-range
   [field]="() =&gt; form.volume()"
   [params]="&#123;
     label: 'Volume',

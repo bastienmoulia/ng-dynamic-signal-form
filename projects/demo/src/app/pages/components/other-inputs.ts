@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { form } from '@angular/forms/signals';
-import { NgdsfInputColor, NgdsfInputFile, NgdsfInputHidden } from 'ng-dynamic-signal-form';
+import { NgffInputColor, NgffInputFile, NgffInputHidden } from 'ng-flex-form';
 
 @Component({
   selector: 'app-other-inputs',
-  imports: [NgdsfInputColor, NgdsfInputFile, NgdsfInputHidden],
+  imports: [NgffInputColor, NgffInputFile, NgffInputHidden],
   templateUrl: './other-inputs.html',
   styleUrl: './other-inputs.css',
 })

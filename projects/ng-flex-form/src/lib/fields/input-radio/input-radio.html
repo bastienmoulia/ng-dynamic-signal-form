@@ -1,0 +1,10 @@
+<ngff-field-template [field]="$any(field())" [params]="params()">
+  <ng-template>
+    <input
+      type="radio"
+      [field]="$any(field())"
+      [attr.id]="params().id"
+      [class]="params().className"
+    />
+  </ng-template>
+</ngff-field-template>

@@ -73,7 +73,7 @@ import &#123;
   imports: [NgdsfFields],
   template: `
     &lt;form&gt;
-      &lt;ngdsf-fields [params]="params" [form]="myForm" /&gt;
+      &lt;ngff-fields [params]="params" [form]="myForm" /&gt;
     &lt;/form&gt;
   `,
 &#125;)
@@ -104,8 +104,8 @@ import &#123; NgdsfSelect &#125; from 'ng-dynamic-signal-form';
   selector: 'app-custom-form',
   imports: [NgdsfInputText, NgdsfInputEmail, NgdsfSelect],
   template: `
-    &lt;ngdsf-input-text [field]="() =&gt; form.name()" [params]="nameParams" /&gt;
-    &lt;ngdsf-input-email [field]="() =&gt; form.email()" [params]="emailParams" /&gt;
+    &lt;ngff-input-text [field]="() =&gt; form.name()" [params]="nameParams" /&gt;
+    &lt;ngff-input-email [field]="() =&gt; form.email()" [params]="emailParams" /&gt;
   `,
 &#125;)
 export class CustomFormComponent &#123;

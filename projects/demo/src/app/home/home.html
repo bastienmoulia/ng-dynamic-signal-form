@@ -1,6 +1,6 @@
 <main>
   <form (submit)="onSubmit($event)">
-    <ngdsf-fields [form]="form" [params]="formParams()" />
+    <ngff-fields [form]="form" [params]="formParams()" />
     <p>Password length: {{ form.password().value().length }}</p>
     <p>Event date: {{ form.eventDate().value() }}</p>
     <p>Event time: {{ form.eventTime().value() }}</p>

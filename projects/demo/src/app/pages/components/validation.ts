@@ -1,15 +1,15 @@
 import { Component, signal } from '@angular/core';
 import { form, required, email, minLength } from '@angular/forms/signals';
 import {
-  NgdsfInputText,
-  NgdsfInputEmail,
-  NgdsfFieldErrors,
-  NgdsfFormErrors,
-} from 'ng-dynamic-signal-form';
+  NgffInputText,
+  NgffInputEmail,
+  NgffFieldErrors,
+  NgffFormErrors,
+} from 'ng-flex-form';
 
 @Component({
   selector: 'app-validation',
-  imports: [NgdsfInputText, NgdsfInputEmail, NgdsfFieldErrors, NgdsfFormErrors],
+  imports: [NgffInputText, NgffInputEmail, NgffFieldErrors, NgffFormErrors],
   templateUrl: './validation.html',
   styleUrl: './validation.css',
 })

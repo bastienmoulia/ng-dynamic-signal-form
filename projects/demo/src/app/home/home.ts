@@ -1,11 +1,11 @@
 import { Component, inject, Injector, runInInjectionContext, signal } from '@angular/core';
 import { email, form, maxLength, pattern, required, submit } from '@angular/forms/signals';
 import { JsonPipe } from '@angular/common';
-import { NgdsfFormParams, NgdsfFieldType, NgdsfFields } from 'ng-dynamic-signal-form';
+import { NgffFormParams, NgffFieldType, NgffFields } from 'ng-flex-form';
 
 @Component({
   selector: 'app-home',
-  imports: [JsonPipe, NgdsfFields],
+  imports: [JsonPipe, NgffFields],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
@@ -22,31 +22,31 @@ export class Home {
     message: '',
   });
 
-  formParams = signal<NgdsfFormParams>({
-    name: { type: NgdsfFieldType.InputText, label: 'Name', placeholder: 'Enter your name', className: 'custom-input-class' },
+  formParams = signal<NgffFormParams>({
+    name: { type: NgffFieldType.InputText, label: 'Name', placeholder: 'Enter your name', className: 'custom-input-class' },
     email: {
-      type: NgdsfFieldType.InputEmail,
+      type: NgffFieldType.InputEmail,
       label: 'Custom Email Label',
       placeholder: 'Enter your email',
       className: 'email-input',
     },
     password: {
-      type: NgdsfFieldType.InputPassword,
+      type: NgffFieldType.InputPassword,
       label: 'Password',
       placeholder: 'Enter your password',
     },
     eventDate: {
-      type: NgdsfFieldType.InputDate,
+      type: NgffFieldType.InputDate,
       label: 'Event Date',
       placeholder: 'Select a date',
     },
     eventTime: {
-      type: NgdsfFieldType.InputTime,
+      type: NgffFieldType.InputTime,
       label: 'Event Time',
       placeholder: 'Select a time',
     },
     country: {
-      type: NgdsfFieldType.Select,
+      type: NgffFieldType.Select,
       label: 'Country',
       className: 'select-field',
       options: [
@@ -84,7 +84,7 @@ export class Home {
       ],
     },
     message: {
-      type: NgdsfFieldType.Textarea,
+      type: NgffFieldType.Textarea,
       label: 'Message',
       placeholder: 'Enter your message',
       rows: 5,

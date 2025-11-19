@@ -7,20 +7,20 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "ng-dynamic-signal-form": {
+    "ng-flex-form": {
       "projectType": "library",
-      "root": "projects/ng-dynamic-signal-form",
-      "sourceRoot": "projects/ng-dynamic-signal-form/src",
+      "root": "projects/ng-flex-form",
+      "sourceRoot": "projects/ng-flex-form/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",
           "configurations": {
             "production": {
-              "tsConfig": "projects/ng-dynamic-signal-form/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ng-flex-form/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ng-dynamic-signal-form/tsconfig.lib.json"
+              "tsConfig": "projects/ng-flex-form/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -28,7 +28,7 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/ng-dynamic-signal-form/tsconfig.spec.json"
+            "tsConfig": "projects/ng-flex-form/tsconfig.spec.json"
           }
         }
       }

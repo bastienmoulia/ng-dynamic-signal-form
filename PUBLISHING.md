@@ -1,6 +1,6 @@
-# Publishing Guide for ng-dynamic-signal-form
+# Publishing Guide for ng-flex-form
 
-This guide provides detailed instructions for publishing the `ng-dynamic-signal-form` library to npm.
+This guide provides detailed instructions for publishing the `ng-flex-form` library to npm.
 
 ## Pre-Publish Checklist
 
@@ -8,7 +8,7 @@ Before publishing a new version, complete this checklist:
 
 - [ ] All unit tests pass (`npm test`)
 - [ ] All E2E tests pass (if applicable) (`npm run e2e`)
-- [ ] Library builds without errors (`ng build ng-dynamic-signal-form`)
+- [ ] Library builds without errors (`ng build ng-flex-form`)
 - [ ] Documentation is up to date (README.md, CHANGELOG.md)
 - [ ] Version number has been bumped appropriately
 - [ ] Peer dependencies are correct for target Angular version
@@ -24,7 +24,7 @@ Follow [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PATCH):
 For backward-compatible bug fixes:
 
 ```bash
-cd projects/ng-dynamic-signal-form
+cd projects/ng-flex-form
 npm version patch
 ```
 
@@ -40,7 +40,7 @@ Examples:
 For new backward-compatible features:
 
 ```bash
-cd projects/ng-dynamic-signal-form
+cd projects/ng-flex-form
 npm version minor
 ```
 
@@ -56,7 +56,7 @@ Examples:
 For breaking changes:
 
 ```bash
-cd projects/ng-dynamic-signal-form
+cd projects/ng-flex-form
 npm version major
 ```
 
@@ -78,10 +78,10 @@ Update the CHANGELOG.md (if it exists):
 
 ### Added
 
-- NgdsfFieldErrors component for field validation display
-- NgdsfFormErrors component for form-level error summary
-- NgdsfFieldGroup component for grouping related fields
-- NgdsfTabs and NgdsfTabPanel components for tabbed layouts
+- NgffFieldErrors component for field validation display
+- NgffFormErrors component for form-level error summary
+- NgffFieldGroup component for grouping related fields
+- NgffTabs and NgffTabPanel components for tabbed layouts
 
 ### Changed
 
@@ -97,7 +97,7 @@ Update the CHANGELOG.md (if it exists):
 From the project root:
 
 ```bash
-cd projects/ng-dynamic-signal-form
+cd projects/ng-flex-form
 npm version <patch|minor|major>
 cd ../..
 ```
@@ -107,13 +107,13 @@ This updates `package.json` and creates a git tag.
 ### 3. Build the Library
 
 ```bash
-ng build ng-dynamic-signal-form --configuration production
+ng build ng-flex-form --configuration production
 ```
 
 Verify the build:
 
 ```bash
-cd dist/ng-dynamic-signal-form
+cd dist/ng-flex-form
 ls -la
 ```
 
@@ -130,15 +130,15 @@ You should see:
 Create a tarball:
 
 ```bash
-cd dist/ng-dynamic-signal-form
+cd dist/ng-flex-form
 npm pack
 ```
 
-This creates `ng-dynamic-signal-form-0.0.2.tgz`. Test it in a separate Angular project:
+This creates `ng-flex-form-0.0.2.tgz`. Test it in a separate Angular project:
 
 ```bash
 # In another Angular project
-npm install /path/to/ng-dynamic-signal-form-0.0.2.tgz
+npm install /path/to/ng-flex-form-0.0.2.tgz
 ```
 
 ### 5. Dry Run
@@ -146,7 +146,7 @@ npm install /path/to/ng-dynamic-signal-form-0.0.2.tgz
 Test publishing without actually publishing:
 
 ```bash
-cd dist/ng-dynamic-signal-form
+cd dist/ng-flex-form
 npm publish --dry-run --access public
 ```
 
@@ -164,7 +164,7 @@ npm login
 **Publish the package:**
 
 ```bash
-cd dist/ng-dynamic-signal-form
+cd dist/ng-flex-form
 npm publish --access public
 ```
 
@@ -172,18 +172,18 @@ The `--access public` flag is required for scoped packages that should be public
 
 ### 7. Verify Publication
 
-1. Check the package page: https://www.npmjs.com/package/ng-dynamic-signal-form
+1. Check the package page: https://www.npmjs.com/package/ng-flex-form
 2. Verify the version is correct
 3. Check that README is displayed properly
 4. Install the package in a test project:
 
 ```bash
-npm install ng-dynamic-signal-form
+npm install ng-flex-form
 ```
 
 ### 8. Create GitHub Release
 
-1. Go to: https://github.com/bastienmoulia/ng-dynamic-signal-form/releases/new
+1. Go to: https://github.com/bastienmoulia/ng-flex-form/releases/new
 2. Select the version tag created earlier (e.g., `v0.0.2`)
 3. Add release title: `v0.0.2`
 4. Add release notes (copy from CHANGELOG.md)
@@ -197,7 +197,7 @@ Update the README.md version references if needed:
 ## Installation
 
 \`\`\`bash
-npm install ng-dynamic-signal-form@latest
+npm install ng-flex-form@latest
 \`\`\`
 ```
 
@@ -226,7 +226,7 @@ git push --tags
 You need to bump the version number. You cannot republish the same version.
 
 ```bash
-cd projects/ng-dynamic-signal-form
+cd projects/ng-flex-form
 npm version patch
 ```
 
@@ -242,7 +242,7 @@ Check what files are included:
 
 ```bash
 npm pack
-tar -xzf ng-dynamic-signal-form-*.tgz
+tar -xzf ng-flex-form-*.tgz
 cd package
 ls -R
 ```
@@ -293,11 +293,11 @@ jobs:
         run: npm test
 
       - name: Build library
-        run: npx ng build ng-dynamic-signal-form --configuration production
+        run: npx ng build ng-flex-form --configuration production
 
       - name: Publish to npm
         run: |
-          cd dist/ng-dynamic-signal-form
+          cd dist/ng-flex-form
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -362,9 +362,9 @@ When removing features:
 
 ```typescript
 /**
- * @deprecated Use NgdsfNewComponent instead. Will be removed in v2.0.0
+ * @deprecated Use NgffNewComponent instead. Will be removed in v2.0.0
  */
-export class NgdsfOldComponent {
+export class NgffOldComponent {
   // ...
 }
 ```

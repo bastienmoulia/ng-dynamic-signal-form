@@ -10,10 +10,10 @@
       <h4>Usage</h4>
       <pre><code>import &#123; NgdsfFieldGroup &#125; from 'ng-dynamic-signal-form';
 
-&lt;ngdsf-field-group [title]="'Personal Information'"&gt;
-  &lt;ngdsf-input-text ... /&gt;
-  &lt;ngdsf-input-email ... /&gt;
-&lt;/ngdsf-field-group&gt;</code></pre>
+&lt;ngff-field-group [title]="'Personal Information'"&gt;
+  &lt;ngff-input-text ... /&gt;
+  &lt;ngff-input-email ... /&gt;
+&lt;/ngff-field-group&gt;</code></pre>
     </div>
   </section>
 
@@ -25,14 +25,14 @@
       <h4>Usage</h4>
       <pre><code>import &#123; NgdsfTabs, NgdsfTabPanel &#125; from 'ng-dynamic-signal-form';
 
-&lt;ngdsf-tabs&gt;
-  &lt;ngdsf-tab-panel [title]="'Basic Info'"&gt;
+&lt;ngff-tabs&gt;
+  &lt;ngff-tab-panel [title]="'Basic Info'"&gt;
     &lt;!-- Form fields --&gt;
-  &lt;/ngdsf-tab-panel&gt;
-  &lt;ngdsf-tab-panel [title]="'Address'"&gt;
+  &lt;/ngff-tab-panel&gt;
+  &lt;ngff-tab-panel [title]="'Address'"&gt;
     &lt;!-- Form fields --&gt;
-  &lt;/ngdsf-tab-panel&gt;
-&lt;/ngdsf-tabs&gt;</code></pre>
+  &lt;/ngff-tab-panel&gt;
+&lt;/ngff-tabs&gt;</code></pre>
     </div>
   </section>
 
@@ -44,13 +44,13 @@
       <h4>Usage</h4>
       <pre><code>import &#123; NgdsfFieldTemplate &#125; from 'ng-dynamic-signal-form';
 
-&lt;ngdsf-field-template
+&lt;ngff-field-template
   [field]="() =&gt; form.myField()"
   [params]="&#123; label: 'My Field' &#125;"
 &gt;
   &lt;!-- Custom input element --&gt;
   &lt;input type="text" ... /&gt;
-&lt;/ngdsf-field-template&gt;</code></pre>
+&lt;/ngff-field-template&gt;</code></pre>
     </div>
   </section>
 </div>

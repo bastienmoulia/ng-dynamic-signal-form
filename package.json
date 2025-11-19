@@ -1,14 +1,14 @@
 {
-  "name": "ng-dynamic-signal-form",
+  "name": "ng-flex-form",
   "version": "0.0.0",
   "description": "",
-  "homepage": "https://github.com/bastienmoulia/ng-dynamic-signal-form#readme",
+  "homepage": "https://github.com/bastienmoulia/ng-flex-form#readme",
   "bugs": {
-    "url": "https://github.com/bastienmoulia/ng-dynamic-signal-form/issues"
+    "url": "https://github.com/bastienmoulia/ng-flex-form/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bastienmoulia/ng-dynamic-signal-form.git"
+    "url": "git+https://github.com/bastienmoulia/ng-flex-form.git"
   },
   "license": "MIT",
   "author": "Bastien Moulia",
@@ -16,7 +16,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-lib": "ng build ng-dynamic-signal-form --watch",
+    "build-lib": "ng build ng-flex-form --watch",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "e2e": "playwright test",
