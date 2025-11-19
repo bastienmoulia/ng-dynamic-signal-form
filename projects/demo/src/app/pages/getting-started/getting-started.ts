@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { email, form, required } from '@angular/forms/signals';
 import { RouterLink } from '@angular/router';
-import { NgdsfFields, NgdsfFieldType, NgdsfFormParams } from 'ng-dynamic-signal-form';
+import { NgffFields, NgffFieldType, NgffFormParams } from 'ng-flex-form';
 
 @Component({
   selector: 'app-getting-started',
-  imports: [RouterLink, NgdsfFields],
+  imports: [RouterLink, NgffFields],
   templateUrl: './getting-started.html',
   styleUrl: './getting-started.css',
 })
@@ -15,9 +15,9 @@ export class GettingStarted {
     email: '',
   });
 
-  formParams: NgdsfFormParams = {
-    name: { type: NgdsfFieldType.InputText, label: 'Name', placeholder: 'Enter your name' },
-    email: { type: NgdsfFieldType.InputEmail, label: 'Email', placeholder: 'Enter your email' },
+  formParams: NgffFormParams = {
+    name: { type: NgffFieldType.InputText, label: 'Name', placeholder: 'Enter your name' },
+    email: { type: NgffFieldType.InputEmail, label: 'Email', placeholder: 'Enter your email' },
   };
 
   myForm = form(this.model, (p) => {

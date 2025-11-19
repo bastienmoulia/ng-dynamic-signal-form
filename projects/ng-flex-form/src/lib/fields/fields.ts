@@ -44,8 +44,15 @@ export enum NgffFieldType {
   Textarea = 'textarea',
 }
 
+export enum NgffWrapperType {
+  FormGroup = 'form-group',
+  FieldGroup = 'field-group',
+  InputGroup = 'input-group',
+}
+
 export interface NgffFieldParamsTyped extends NgffFieldParams {
-  type: NgffFieldType;
+  type: NgffFieldType | NgffWrapperType;
+  childrens?: NgffFormParams[];
 }
 
 export interface NgffFormParams {
