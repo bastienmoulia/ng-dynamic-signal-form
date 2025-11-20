@@ -3,6 +3,7 @@
  */
 
 export * from './lib/fields/fields';
+export * from './lib/fields/field';
 export * from './lib/layout/field-template';
 export * from './lib/fields/input-checkbox/input-checkbox';
 export * from './lib/fields/input-color/input-color';

@@ -2,71 +2,7 @@
   @let field = form()[param.key];
   @if (field) {
     <ngff-field-template [field]="field" [params]="param">
-      @switch (param['type']) {
-        @case ('input-text') {
-          <ngff-input-text [field]="field" [params]="param" />
-        }
-        @case ('input-email') {
-          <ngff-input-email [field]="field" [params]="param" />
-        }
-        @case ('input-password') {
-          <ngff-input-password [field]="field" [params]="param" />
-        }
-        @case ('input-date') {
-          <ngff-input-date [field]="field" [params]="param" />
-        }
-        @case ('input-time') {
-          <ngff-input-time [field]="field" [params]="param" />
-        }
-        @case ('input-number') {
-          <ngff-input-number [field]="field" [params]="param" />
-        }
-        @case ('input-tel') {
-          <ngff-input-tel [field]="field" [params]="param" />
-        }
-        @case ('input-url') {
-          <ngff-input-url [field]="field" [params]="param" />
-        }
-        @case ('input-search') {
-          <ngff-input-search [field]="field" [params]="param" />
-        }
-        @case ('input-color') {
-          <ngff-input-color [field]="field" [params]="param" />
-        }
-        @case ('input-checkbox') {
-          <ngff-input-checkbox [field]="field" [params]="param" />
-        }
-        @case ('input-radio') {
-          <ngff-input-radio [field]="field" [params]="param" />
-        }
-        @case ('input-range') {
-          <ngff-input-range [field]="field" [params]="param" />
-        }
-        @case ('input-file') {
-          <ngff-input-file [field]="field" [params]="param" />
-        }
-        @case ('input-hidden') {
-          <ngff-input-hidden [field]="field" [params]="param" />
-        }
-        @case ('input-datetime-local') {
-          <ngff-input-datetime-local [field]="field" [params]="param" />
-        }
-        @case ('input-month') {
-          <ngff-input-month [field]="field" [params]="param" />
-        }
-        @case ('input-week') {
-          <ngff-input-week [field]="field" [params]="param" />
-        }
-        @case ('select') {
-          <ngff-select [field]="field" [params]="param" />
-        }
-        @case ('textarea') {
-          <ngff-textarea [field]="field" [params]="param" />
-        }
-        @default {
-          type not found
-        }
-      }
+      <ngff-field [field]="field" [params]="$any(param)" />
     </ngff-field-template>
   } @else {
     Pas de field
