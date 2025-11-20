@@ -1,63 +1,63 @@
 @switch (params()['type']) {
   @case ('input-text') {
-    <ngff-input-text [field]="field" [params]="params" />
+    <ngff-input-text [field]="field()" [params]="params" />
   }
   @case ('input-email') {
-    <ngff-input-email [field]="field" [params]="params" />
+    <ngff-input-email [field]="field()" [params]="params" />
   }
   @case ('input-password') {
-    <ngff-input-password [field]="field" [params]="params" />
+    <ngff-input-password [field]="field()" [params]="params" />
   }
   @case ('input-date') {
-    <ngff-input-date [field]="field" [params]="params" />
+    <ngff-input-date [field]="field()" [params]="params" />
   }
   @case ('input-time') {
-    <ngff-input-time [field]="field" [params]="params" />
+    <ngff-input-time [field]="field()" [params]="params" />
   }
   @case ('input-number') {
-    <ngff-input-number [field]="field" [params]="params" />
+    <ngff-input-number [field]="field()" [params]="params" />
   }
   @case ('input-tel') {
-    <ngff-input-tel [field]="field" [params]="params" />
+    <ngff-input-tel [field]="field()" [params]="params" />
   }
   @case ('input-url') {
-    <ngff-input-url [field]="field" [params]="params" />
+    <ngff-input-url [field]="field()" [params]="params" />
   }
   @case ('input-search') {
-    <ngff-input-search [field]="field" [params]="params" />
+    <ngff-input-search [field]="field()" [params]="params" />
   }
   @case ('input-color') {
-    <ngff-input-color [field]="field" [params]="params" />
+    <ngff-input-color [field]="field()" [params]="params" />
   }
   @case ('input-checkbox') {
-    <ngff-input-checkbox [field]="field" [params]="params" />
+    <ngff-input-checkbox [field]="field()" [params]="params" />
   }
   @case ('input-radio') {
-    <ngff-input-radio [field]="field" [params]="params" />
+    <ngff-input-radio [field]="field()" [params]="params" />
   }
   @case ('input-range') {
-    <ngff-input-range [field]="field" [params]="params" />
+    <ngff-input-range [field]="field()" [params]="params" />
   }
   @case ('input-file') {
-    <ngff-input-file [field]="field" [params]="params" />
+    <ngff-input-file [field]="field()" [params]="params" />
   }
   @case ('input-hidden') {
-    <ngff-input-hidden [field]="field" [params]="params" />
+    <ngff-input-hidden [field]="field()" [params]="params" />
   }
   @case ('input-datetime-local') {
-    <ngff-input-datetime-local [field]="field" [params]="params" />
+    <ngff-input-datetime-local [field]="field()" [params]="params" />
   }
   @case ('input-month') {
-    <ngff-input-month [field]="field" [params]="params" />
+    <ngff-input-month [field]="field()" [params]="params" />
   }
   @case ('input-week') {
-    <ngff-input-week [field]="field" [params]="params" />
+    <ngff-input-week [field]="field()" [params]="params" />
   }
   @case ('select') {
-    <ngff-select [field]="field" [params]="params" />
+    <ngff-select [field]="field()" [params]="params" />
   }
   @case ('textarea') {
-    <ngff-textarea [field]="field" [params]="params" />
+    <ngff-textarea [field]="field()" [params]="params" />
   }
   @default {
     type not found

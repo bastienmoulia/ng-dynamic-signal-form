@@ -1,11 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { form, required, email, minLength } from '@angular/forms/signals';
-import {
-  NgffInputText,
-  NgffInputEmail,
-  NgffFieldErrors,
-  NgffFormErrors,
-} from 'ng-flex-form';
+import { NgffInputText, NgffInputEmail, NgffFieldErrors, NgffFormErrors } from 'ng-flex-form';
 
 @Component({
   selector: 'app-validation',

@@ -21,6 +21,7 @@ import { NgffTextarea } from './textarea/textarea';
 import { NgffSelect } from './select/select';
 import { NgffFieldParams } from '../layout/field-template';
 import { NgffWrapperType } from './fields';
+import { FieldState } from '@angular/forms/signals';
 
 export enum NgffFieldType {
   InputCheckbox = 'input-checkbox',
@@ -79,5 +80,5 @@ export interface NgffFieldParamsTyped extends NgffFieldParams {
 })
 export class NgffField {
   params = input.required<NgffFieldParamsTyped>();
-  field = input.required<any>();
+  field = input.required<() => FieldState<any, string | number>>();
 }
