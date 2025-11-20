@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { Field, FieldState } from '@angular/forms/signals';
-import { NgffFieldParams, NgffFieldTemplate } from '../../layout/field-template';
+import { NgffFieldParams } from '../../layout/field-template';
 
 export interface NgffInputSearchParams extends NgffFieldParams {
   minlength?: number;
@@ -12,7 +12,7 @@ export interface NgffInputSearchParams extends NgffFieldParams {
 
 @Component({
   selector: 'ngff-input-search',
-  imports: [Field, NgffFieldTemplate],
+  imports: [Field],
   templateUrl: './input-search.html',
 })
 export class NgffInputSearch {

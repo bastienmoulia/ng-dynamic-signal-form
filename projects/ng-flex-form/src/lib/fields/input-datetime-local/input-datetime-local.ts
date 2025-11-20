@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { Field, FieldState } from '@angular/forms/signals';
-import { NgffFieldParams, NgffFieldTemplate } from '../../layout/field-template';
+import { NgffFieldParams } from '../../layout/field-template';
 
 export interface NgffInputDatetimeLocalParams extends NgffFieldParams {
   min?: string;
@@ -10,7 +10,7 @@ export interface NgffInputDatetimeLocalParams extends NgffFieldParams {
 
 @Component({
   selector: 'ngff-input-datetime-local',
-  imports: [Field, NgffFieldTemplate],
+  imports: [Field],
   templateUrl: './input-datetime-local.html',
 })
 export class NgffInputDatetimeLocal {

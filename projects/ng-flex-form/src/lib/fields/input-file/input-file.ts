@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { Field, FieldState } from '@angular/forms/signals';
-import { NgffFieldParams, NgffFieldTemplate } from '../../layout/field-template';
+import { NgffFieldParams } from '../../layout/field-template';
 
 export interface NgffInputFileParams extends NgffFieldParams {
   accept?: string;
@@ -9,7 +9,7 @@ export interface NgffInputFileParams extends NgffFieldParams {
 
 @Component({
   selector: 'ngff-input-file',
-  imports: [Field, NgffFieldTemplate],
+  imports: [Field],
   templateUrl: './input-file.html',
 })
 export class NgffInputFile {

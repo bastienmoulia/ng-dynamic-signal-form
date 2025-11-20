@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { Field, FieldState } from '@angular/forms/signals';
-import { NgffFieldParams, NgffFieldTemplate } from '../../layout/field-template';
+import { NgffFieldParams } from '../../layout/field-template';
 
 export interface NgffInputCheckboxParams extends NgffFieldParams {
   value?: string;
@@ -8,7 +8,7 @@ export interface NgffInputCheckboxParams extends NgffFieldParams {
 
 @Component({
   selector: 'ngff-input-checkbox',
-  imports: [Field, NgffFieldTemplate],
+  imports: [Field],
   templateUrl: './input-checkbox.html',
 })
 export class NgffInputCheckbox {

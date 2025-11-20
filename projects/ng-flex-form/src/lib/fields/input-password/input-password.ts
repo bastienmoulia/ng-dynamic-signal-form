@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { NgffFieldParams, NgffFieldTemplate } from '../../layout/field-template';
+import { NgffFieldParams } from '../../layout/field-template';
 import { Field, FieldState } from '@angular/forms/signals';
 
 export interface NgffInputPasswordParams extends NgffFieldParams {
@@ -12,7 +12,7 @@ export interface NgffInputPasswordParams extends NgffFieldParams {
 
 @Component({
   selector: 'ngff-input-password',
-  imports: [Field, NgffFieldTemplate],
+  imports: [Field],
   templateUrl: './input-password.html',
 })
 export class NgffInputPassword {

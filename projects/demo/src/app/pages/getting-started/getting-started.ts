@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { email, form, required } from '@angular/forms/signals';
 import { RouterLink } from '@angular/router';
-import { NgffFields, NgffFieldType, NgffFormParams } from 'ng-flex-form';
+import { NgffFields, NgffFieldType, NgffFormParams, NgffWrapperType } from 'ng-flex-form';
 
 @Component({
   selector: 'app-getting-started',
@@ -22,6 +22,7 @@ export class GettingStarted {
       type: NgffFieldType.InputEmail,
       label: 'Email',
       placeholder: 'Enter your email',
+      wrappers: [NgffWrapperType.FieldGroup],
     },
   ];
 

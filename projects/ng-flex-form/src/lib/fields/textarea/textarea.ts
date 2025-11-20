@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { Field, FieldState } from '@angular/forms/signals';
-import { NgffFieldParams, NgffFieldTemplate } from '../../layout/field-template';
+import { NgffFieldParams } from '../../layout/field-template';
 
 export interface NgffTextareaParams extends NgffFieldParams {
   rows?: number;
@@ -12,7 +12,7 @@ export interface NgffTextareaParams extends NgffFieldParams {
 
 @Component({
   selector: 'ngff-textarea',
-  imports: [Field, NgffFieldTemplate],
+  imports: [Field],
   templateUrl: './textarea.html',
 })
 export class NgffTextarea {

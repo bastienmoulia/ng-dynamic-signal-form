@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { Field, FieldState } from '@angular/forms/signals';
-import { NgffFieldParams, NgffFieldTemplate } from '../../layout/field-template';
+import { NgffFieldParams } from '../../layout/field-template';
 
 export interface NgffInputNumberParams extends NgffFieldParams {
   min?: number;
@@ -11,7 +11,7 @@ export interface NgffInputNumberParams extends NgffFieldParams {
 
 @Component({
   selector: 'ngff-input-number',
-  imports: [Field, NgffFieldTemplate],
+  imports: [Field],
   templateUrl: './input-number.html',
 })
 export class NgffInputNumber {

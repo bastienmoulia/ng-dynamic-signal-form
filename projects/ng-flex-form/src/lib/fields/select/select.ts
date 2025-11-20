@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { Field, FieldState } from '@angular/forms/signals';
-import { NgffFieldParams, NgffFieldTemplate } from '../../layout/field-template';
+import { NgffFieldParams } from '../../layout/field-template';
 
 export interface NgffSelectOption {
   type?: 'option';
@@ -30,7 +30,7 @@ export interface NgffSelectParams extends NgffFieldParams {
 
 @Component({
   selector: 'ngff-select',
-  imports: [Field, NgffFieldTemplate],
+  imports: [Field],
   templateUrl: './select.html',
 })
 export class NgffSelect {

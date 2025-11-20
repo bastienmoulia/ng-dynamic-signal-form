@@ -1,5 +1,5 @@
 import { Component, computed, input } from '@angular/core';
-import { NgffFieldParams } from '../layout/field-template';
+import { NgffFieldParams, NgffFieldTemplate } from '../layout/field-template';
 import { NgffInputText } from './input-text/input-text';
 import { NgffInputEmail } from './input-email/input-email';
 import { NgffInputDate } from './input-date/input-date';
@@ -52,11 +52,19 @@ export enum NgffWrapperType {
 
 export interface NgffFieldParamsTyped extends NgffFieldParams {
   key: string;
-  type: NgffFieldType | NgffWrapperType;
-  childrens?: NgffFieldParamsTyped[];
+  type: NgffFieldType;
+  wrappers?: NgffWrapperType[];
 }
 
-export type NgffFormParams = NgffFieldParamsTyped[];
+export interface NgffWrapperParams {
+  type: NgffWrapperType;
+  label?: string;
+  className?: string;
+  childrens: (NgffFieldParamsTyped | NgffWrapperParams)[];
+  [key: string]: any;
+}
+
+export type NgffFormParams = (NgffFieldParamsTyped | NgffWrapperParams)[];
 
 @Component({
   selector: 'ngff-fields',
@@ -81,10 +89,11 @@ export type NgffFormParams = NgffFieldParamsTyped[];
     NgffInputWeek,
     NgffSelect,
     NgffTextarea,
+    NgffFieldTemplate,
   ],
   templateUrl: './fields.html',
 })
 export class NgffFields {
-  params = input.required<NgffFieldParamsTyped[]>();
+  params = input.required<NgffFormParams>();
   form = input.required<any>();
 }

@@ -1,14 +1,10 @@
-<ngff-field-template [field]="$any(field())" [params]="params()">
-  <ng-template>
-    <textarea
-      [field]="$any(field())"
-      [attr.id]="params().id"
-      [attr.placeholder]="params().placeholder"
-      [attr.rows]="params().rows"
-      [attr.cols]="params().cols"
-      [attr.wrap]="params().wrap"
-      [attr.autocomplete]="'noop'"
-      [class]="params().className"
-    ></textarea>
-  </ng-template>
-</ngff-field-template>
+<textarea
+  [field]="$any(field())"
+  [attr.id]="params().id"
+  [attr.placeholder]="params().placeholder"
+  [attr.rows]="params().rows"
+  [attr.cols]="params().cols"
+  [attr.wrap]="params().wrap"
+  [attr.autocomplete]="'noop'"
+  [class]="params().className"
+></textarea>

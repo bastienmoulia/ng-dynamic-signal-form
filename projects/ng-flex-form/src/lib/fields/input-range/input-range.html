@@ -1,11 +1,7 @@
-<ngff-field-template [field]="$any(field())" [params]="params()">
-  <ng-template>
-    <input
-      type="range"
-      [field]="$any(field())"
-      [attr.id]="params().id"
-      [attr.step]="params().step"
-      [class]="params().className"
-    />
-  </ng-template>
-</ngff-field-template>
+<input
+  type="range"
+  [field]="$any(field())"
+  [attr.id]="params().id"
+  [attr.step]="params().step"
+  [class]="params().className"
+/>

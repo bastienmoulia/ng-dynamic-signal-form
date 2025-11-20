@@ -14,29 +14,27 @@ export interface NgffFieldParams {
 
 @Component({
   selector: 'ngff-field-template',
-  imports: [NgTemplateOutlet],
+  imports: [],
   template: `
-    @if(field() !== undefined && field()() !== undefined) {
-    <label>
-      @if (params().label) {
-      {{ params().label }}
-      {{ field()().required?.() ? '*' : '' }}
-      } @if (contentTemplate()) {
-      <ng-container *ngTemplateOutlet="contentTemplate()" />
+    @if (field() !== undefined && field()() !== undefined) {
+      <label>
+        @if (params().label) {
+          {{ params().label }}
+          {{ field()().required?.() ? '*' : '' }}
+        }
+        <ng-content />
+      </label>
+      @if (field()().touched() && field()().invalid()) {
+        <ul>
+          @for (error of field()().errors(); track $index) {
+            <li>{{ error.message }}</li>
+          }
+        </ul>
       }
-    </label>
-    @if (field()().touched() && field()().invalid()) {
-    <ul>
-      @for (error of field()().errors(); track $index) {
-      <li>{{ error.message }}</li>
-      }
-    </ul>
-    } }
+    }
   `,
 })
 export class NgffFieldTemplate {
   field = input.required<() => FieldState<any, string | number>>();
   params = input.required<NgffFieldParams>({});
-
-  contentTemplate = contentChild(TemplateRef);
 }

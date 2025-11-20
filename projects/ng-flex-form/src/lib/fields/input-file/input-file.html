@@ -1,12 +1,8 @@
-<ngff-field-template [field]="$any(field())" [params]="params()">
-  <ng-template>
-    <input
-      type="file"
-      [field]="$any(field())"
-      [attr.id]="params().id"
-      [attr.accept]="params().accept"
-      [attr.multiple]="params().multiple"
-      [class]="params().className"
-    />
-  </ng-template>
-</ngff-field-template>
+<input
+  type="file"
+  [field]="$any(field())"
+  [attr.id]="params().id"
+  [attr.accept]="params().accept"
+  [attr.multiple]="params().multiple"
+  [class]="params().className"
+/>

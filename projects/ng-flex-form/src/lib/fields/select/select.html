@@ -1,29 +1,28 @@
-<ngff-field-template [field]="$any(field())" [params]="params()">
-  <ng-template>
-    <select
-      [field]="$any(field())"
-      [attr.id]="params().id"
-      [attr.multiple]="params().multiple"
-      [attr.size]="params().size"
-      [attr.autocomplete]="'noop'"
-      [class]="params().className"
-    >
-      @if (params().options) { @for (item of params().options; track $index) { @if (item.type ===
-      'optgroup') {
-      <optgroup [label]="item.label" [attr.disabled]="item.disabled ? true : null">
-        @for (option of item.options; track option.value) {
-        <option [value]="option.value" [attr.disabled]="option.disabled ? true : null">
-          {{ option.label }}
-        </option>
-        }
-      </optgroup>
+<select
+  [field]="$any(field())"
+  [attr.id]="params().id"
+  [attr.multiple]="params().multiple"
+  [attr.size]="params().size"
+  [attr.autocomplete]="'noop'"
+  [class]="params().className"
+>
+  @if (params().options) {
+    @for (item of params().options; track $index) {
+      @if (item.type === 'optgroup') {
+        <optgroup [label]="item.label" [attr.disabled]="item.disabled ? true : null">
+          @for (option of item.options; track option.value) {
+            <option [value]="option.value" [attr.disabled]="option.disabled ? true : null">
+              {{ option.label }}
+            </option>
+          }
+        </optgroup>
       } @else if (item.type === 'hr') {
-      <hr />
+        <hr />
       } @else {
-      <option [value]="item.value" [attr.disabled]="item.disabled ? true : null">
-        {{ item.label }}
-      </option>
-      } } }
-    </select>
-  </ng-template>
-</ngff-field-template>
+        <option [value]="item.value" [attr.disabled]="item.disabled ? true : null">
+          {{ item.label }}
+        </option>
+      }
+    }
+  }
+</select>
