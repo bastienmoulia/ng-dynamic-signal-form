@@ -1,4 +1,12 @@
-import { Component, input } from '@angular/core';
+import {
+  Component,
+  input,
+  ViewContainerRef,
+  viewChild,
+  effect,
+  Type,
+  inputBinding,
+} from '@angular/core';
 import { NgffInputText } from './input-text/input-text';
 import { NgffInputEmail } from './input-email/input-email';
 import { NgffInputDate } from './input-date/input-date';
@@ -52,33 +60,54 @@ export interface NgffFieldParamsTyped extends NgffFieldParams {
   wrappers?: NgffWrapperType[];
 }
 
+const FIELD_TYPE_MAP: Record<NgffFieldType, Type<any>> = {
+  [NgffFieldType.InputCheckbox]: NgffInputCheckbox,
+  [NgffFieldType.InputColor]: NgffInputColor,
+  [NgffFieldType.InputDate]: NgffInputDate,
+  [NgffFieldType.InputDatetimeLocal]: NgffInputDatetimeLocal,
+  [NgffFieldType.InputEmail]: NgffInputEmail,
+  [NgffFieldType.InputFile]: NgffInputFile,
+  [NgffFieldType.InputHidden]: NgffInputHidden,
+  [NgffFieldType.InputMonth]: NgffInputMonth,
+  [NgffFieldType.InputNumber]: NgffInputNumber,
+  [NgffFieldType.InputPassword]: NgffInputPassword,
+  [NgffFieldType.InputRadio]: NgffInputRadio,
+  [NgffFieldType.InputRange]: NgffInputRange,
+  [NgffFieldType.InputSearch]: NgffInputSearch,
+  [NgffFieldType.InputTel]: NgffInputTel,
+  [NgffFieldType.InputText]: NgffInputText,
+  [NgffFieldType.InputTime]: NgffInputTime,
+  [NgffFieldType.InputUrl]: NgffInputUrl,
+  [NgffFieldType.InputWeek]: NgffInputWeek,
+  [NgffFieldType.Select]: NgffSelect,
+  [NgffFieldType.Textarea]: NgffTextarea,
+};
+
 @Component({
   selector: 'ngff-field',
-  imports: [
-    NgffInputText,
-    NgffInputEmail,
-    NgffInputDate,
-    NgffInputPassword,
-    NgffInputTime,
-    NgffInputNumber,
-    NgffInputTel,
-    NgffInputUrl,
-    NgffInputSearch,
-    NgffInputColor,
-    NgffInputCheckbox,
-    NgffInputRadio,
-    NgffInputRange,
-    NgffInputFile,
-    NgffInputHidden,
-    NgffInputDatetimeLocal,
-    NgffInputMonth,
-    NgffInputWeek,
-    NgffSelect,
-    NgffTextarea,
-  ],
-  templateUrl: './field.html',
+  template: '<ng-container #container />',
 })
 export class NgffField {
   params = input.required<NgffFieldParamsTyped>();
   field = input.required<() => FieldState<any, string | number>>();
+
+  private container = viewChild.required('container', { read: ViewContainerRef });
+
+  constructor() {
+    effect(() => {
+      const containerRef = this.container();
+      const fieldType = this.params().type;
+      const componentType = FIELD_TYPE_MAP[fieldType];
+
+      // Clear previous component
+      containerRef.clear();
+
+      if (componentType) {
+        // Create component with bindings
+        containerRef.createComponent(componentType, {
+          bindings: [inputBinding('field', this.field), inputBinding('params', this.params)],
+        });
+      }
+    });
+  }
 }
