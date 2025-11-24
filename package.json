@@ -61,7 +61,7 @@
     "@playwright/test": "^1.56.1",
     "@typescript-eslint/eslint-plugin": "7.11.0",
     "@typescript-eslint/parser": "7.11.0",
-    "angular-eslint": "20.6.0",
+    "angular-eslint": "21.0.1",
     "eslint": "8.57.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
